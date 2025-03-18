@@ -42,19 +42,21 @@ app.get('/', (req, res, next) => {
     res.send(`
         <link rel="stylesheet" type="text/css" href="/css/style.css">  
 
-        <h1>Home Page</h1>
+        <div class="body-container">
+            <h1 class="home-page-title">Home Page</h1>
 
-        <ul>
-            <li> <a href="/students">Students List</a> </li>
+            <ul class="home-page-links">
+                <li> <a href="/students">Students List</a> </li>
 
-            <li> <a href="/groups">Groups List</a> </li>
+                <li> <a href="/groups">Groups List</a> </li>
 
-            <li> <a href="/programming-languages">Programming Languages List</a> </li>
+                <li> <a href="/programming-languages">Programming Languages List</a> </li>
 
-            <li> <a href="/lecturers">Lecturers List</a> </li>
+                <li> <a href="/lecturers">Lecturers List</a> </li>
 
-            <li> <a href="/subjects">Subjects List</a> </li>
-        </ul>       
+                <li> <a href="/subjects">Subjects List</a> </li>
+            </ul>
+        <div>       
     `)
 })
 
