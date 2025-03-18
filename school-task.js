@@ -9,6 +9,8 @@ const app = express()
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.use(express.static('public'))  //Cssui
+
 //-----------------STUDENTS-------------------
 
 let students = [
@@ -38,7 +40,10 @@ let students = [
 
 app.get('/', (req, res, next) => {
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">  
+
         <h1>Home Page</h1>
+
         <ul>
             <li> <a href="/students">Students List</a> </li>
 
@@ -49,7 +54,7 @@ app.get('/', (req, res, next) => {
             <li> <a href="/lecturers">Lecturers List</a> </li>
 
             <li> <a href="/subjects">Subjects List</a> </li>
-        </ul>          
+        </ul>       
     `)
 })
 
@@ -67,7 +72,9 @@ app.get('/students', (req, res, next) => {
         </li>`
     ).join('')
 
-    res.send(`
+    res.send(`      
+        <link rel="stylesheet" type="text/css" href="/css/style.css">      
+
         <div>
             <a href="/">Home Page</a>
             <a href="/create-student">Create a Student Record</a>
@@ -89,6 +96,8 @@ app.get('/students/:id', (req, res, next) => {
 
     if (filteredStudent) {
         res.send(`
+            <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
             <a href="/">Home Page</a>
             <a href="/students">Students List</a>
 
@@ -119,6 +128,8 @@ app.get('/students/:id', (req, res, next) => {
 
 app.get('/create-student', (req, res, next) => {
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <a href="/">Home Page</a>
             <a href="/students">Students List</a>
@@ -231,6 +242,8 @@ app.get('/edit-student/:id', (req, res, next) => {
     const { name, surname, age, phone, email, itKnowledge, group, interests } = filteredStudent
 
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <h1>Edit Student's Data</h1> 
             
@@ -381,6 +394,8 @@ app.get('/groups', (req, res, next) => {
     ).join('')
 
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <a href="/">Home Page</a>
             <a href="/create-group">Create a Group</a>
@@ -402,6 +417,8 @@ app.get('/groups/:id', (req, res, next) => {
         const { id, name, description } = group
 
         res.send(`
+            <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
             <div>
                 <a href="/">Home Page</a>
                 <a href="/groups">Groups List</a>
@@ -428,6 +445,8 @@ app.get('/groups/:id', (req, res, next) => {
 
 app.get('/create-group', (req, res, next) => {
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <a href="/">Home Page</a>
             <a href="/groups">Groups List</a>
@@ -470,6 +489,8 @@ app.get('/edit-group/:id', (req, res, next) => {
         const { name, description, id } = group
         
         res.send(`
+            <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
             <div>
                 <a href="/">Home Page</a>
                 <a href="/groups">Groups List</a>
@@ -543,6 +564,8 @@ app.get('/programming-languages', (req, res, next) => {
     ).join('')
 
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <a href="/">Home Page</a>
             <a href="/create-programming-language">Create a Programming Language</a>
@@ -566,6 +589,8 @@ app.get('/programming-languages/:id', (req, res, next) => {
         const { name, description, id } = language
 
         res.send(`
+            <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
             <div>
                 <a href="/">Home Page</a>
                 <a href="/programming-languages">Programming Languages List</a>
@@ -591,6 +616,8 @@ app.get('/programming-languages/:id', (req, res, next) => {
 
 app.get('/create-programming-language', (req, res, next) => {
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <a href="/">Home Page</a>
             <a href="/programming-languages">Programming Languages List</a>
@@ -630,6 +657,8 @@ app.get('/edit-programming-language/:id', (req, res, next) => {
 
     if (language) {
         res.send(`
+            <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
             <div>
                 <a href="/">Home Page</a>
                 <a href="/programming-languages">Programming Languages List</a>
@@ -715,6 +744,8 @@ app.get('/lecturers', (req, res, next) => {
     ).join('')
 
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <a href="/">Home Page</a>
             <a href="/create-lecturer">Create a Lecturer</a>
@@ -734,6 +765,8 @@ app.get('/lecturers/:id', (req, res, next) => {
         const { name, surname, id, phone, email, age, subjects, yearsOfExperience, favoriteLanguage } = filteredLecturer
 
         res.send(`
+            <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
             <div>
                 <a href="/">Home Page</a>
                 <a href="/lecturers">Lecturers List</a>
@@ -756,12 +789,14 @@ app.get('/lecturers/:id', (req, res, next) => {
         `)
 
     } else {
-        res.send(`<h1>Lecturer not found</h1><a href="/lecturers">Back to List</a>`)
+        res.send(`<link rel="stylesheet" type="text/css" href="/css/style.css"><h1>Lecturer not found</h1><a href="/lecturers">Back to List</a>`)
     }
 })
 
 app.get('/create-lecturer', (req, res, next) => {
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <a href="/">Home Page</a>
             <a href="/lecturers">Lecturers List</a>
@@ -846,6 +881,8 @@ app.get('/edit-lecturer/:id', (req, res, next) => {
         const { id, name, surname, age, phone, email, subjects, yearsOfExperience, favoriteLanguage } = filteredLecturer
 
         res.send(`
+            <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
             <div>
                 <a href="/">Home Page</a>
                 <a href="/lecturers">Lecturers List</a>
@@ -963,6 +1000,8 @@ app.get('/subjects', (req, res, next) => {
     ).join('')
 
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <a href="/">Home Page</a>
             <a href="/create-subject">Create a Subject</a>
@@ -987,6 +1026,8 @@ app.get('/subjects/:id', (req, res, next) => {
         const { id, name, description } = filteredSubject
 
         res.send(`
+            <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
             <div>
                 <a href="/">Home Page</a>
                 <a href="/subjects">Subjects List</a>
@@ -1012,6 +1053,8 @@ app.get('/subjects/:id', (req, res, next) => {
 
 app.get('/create-subject', (req, res, next) => {
     res.send(`
+        <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
         <div>
             <a href="/">Home Page</a>
             <a href="/subjects">Subjects List</a>
@@ -1052,6 +1095,8 @@ app.get('/edit-subject/:id', (req, res, next) => {
         const { id, name, description } = filteredSubject
 
         res.send(`
+            <link rel="stylesheet" type="text/css" href="/css/style.css">    
+
             <div>
                 <a href="/">Home Page</a>
                 <a href="/subjects">Subjects List</a>
@@ -1095,7 +1140,6 @@ app.post('/delete-subject', (req, res, next) => {
 
     res.redirect('/subjects')
 })
-
 
 
 
