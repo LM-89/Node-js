@@ -1,0 +1,56 @@
+[
+  {
+    "name": "John",
+    "surname": "Doe",
+    "age": "40",
+    "phone": "+37077717033",
+    "email": "student@example.com",
+    "itKnowledge": "10",
+    "group": "TYPE 20",
+    "id": "e85ba904-a985-4e6a-bff4-077eea7e0bd3",
+    "interests": []
+  },
+  {
+    "name": "John",
+    "surname": "Doe",
+    "age": "36",
+    "phone": "+37077717033",
+    "email": "student@example.com",
+    "itKnowledge": "5",
+    "group": "TYPE 22",
+    "interests": [
+      "JavaScript",
+      "Rust",
+      "Python"
+    ],
+    "id": "dcecaadb-667d-4e74-80c0-acaa7009ea64"
+  },
+  {
+    "name": "John",
+    "surname": "Doe",
+    "age": "36",
+    "phone": "+37077717033",
+    "email": "student@example.com",
+    "itKnowledge": "5",
+    "group": "TYPE 22",
+    "interests": [
+      "JavaScript"
+    ],
+    "id": "7ac06a5e-3c3b-4339-ba8e-a11d9b70792d"
+  },
+  {
+    "name": "John",
+    "surname": "Doe",
+    "age": "40",
+    "phone": "+37077717033",
+    "email": "student@example.com",
+    "itKnowledge": "10",
+    "group": "TYPE 22",
+    "interests": [
+      "JavaScript",
+      "Rust",
+      "Python"
+    ],
+    "id": "029b12fe-5afe-455c-be3d-9059d19aac88"
+  }
+]

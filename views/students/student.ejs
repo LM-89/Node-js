@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student's Profile</title>
+        <link rel="stylesheet" href="/public/style.css">
+    </head>
+    
+    <body>
+        <div class="body-container">
+            <div class="profile-card">
+                <% if (student) { %>                   
+                    <a href="/">Home Page</a>
+                    <a href="/students">Students List</a>
+
+                    <h1>Student: <%= student.name %> <%= student.surname %> (id: <%= student.id %>)</h1>
+                    <p class="student-info">Age: <%= student.age %></p>
+                    <p class="student-info">Phone: <%= student.phone %></p>
+                    <p class="student-info">Email: <%= student.email %></p>
+                    <p class="student-info">IT Knowledge: <%= student.itKnowledge %>/10</p>
+                    <p class="student-info">Group: <%= student.group %></p>
+                    <p class="student-info">Programming Languages: <%= student.interests.join(', ') %>.</p>
+
+                    <form action="/delete-student" method="POST">
+                        <button type="submit">Delete Student</button>
+                        <input type="hidden" name="studentId" value="<%= id %>" />
+                    </form>
+
+                    <a href="/edit-student/<%= student.id %>"><button>Edit Student's Data</button></a>
+                
+                <% } else { %>           
+                    <h1>No Records</h1>
+                    <p>Student with id: <%= student.id %> was not found.</p>
+                    <a href="/students">Students List</a>            
+                <% } %>
+            </div>
+        </div>    
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add New Subject</title>
+        <link rel="stylesheet" href="/public/style.css">
+    </head>
+
+    <body>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/subjects">Subjects List</a>
+    
+                <h1>Create a Subject</h1>
+    
+                <form action="/subject-created" method="POST">
+                    <div class="form-control">
+                        <label for="subject-name">Subject Name:</label>
+                        <input type="text" name="name" id="subject-name" required />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="subject-description">Description:</label>
+                        <textarea name="description" id="subject-description" required></textarea>
+                    </div>
+    
+                    <button type="submit">Create Subject</button>
+                </form>
+            </div>
+        </div>    
+    </body>
+</html>

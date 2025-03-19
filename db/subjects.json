@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "name": "Mathematics",
+    "description": "Fundamental math concepts"
+  },
+  {
+    "id": "2",
+    "name": "Computer Science",
+    "description": "Study of computers and algorithms."
+  },
+  {
+    "id": "3",
+    "name": "Physics",
+    "description": "Study of matter and energy"
+  }
+]

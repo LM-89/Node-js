@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Group Info</title>
+        <link rel="stylesheet" href="/public/style.css">
+    </head>
+
+    <body>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/groups">Groups List</a>
+
+                <h1>Edit Group Info</h1>
+
+                <form action="/group-edited" method="POST">
+
+                    <div class="form-control">
+                        <label for="group-name">Group Name:</label>
+                        <input type="text" name="name" id="group-name" required value="<%= group.name %>" />
+                    </div>
+
+                    <div class="form-control">
+                        <label for="group-description">Description:</label>
+                        <textarea name="description" id="group-description" required><%= group.description %></textarea>
+                    </div>
+
+                    <input type="hidden" name="id" value="<%= group.id %>" />
+                    <button type="submit">Update Group Info</button>
+                </form>
+            </div>
+        </div>        
+    </body>
+</html>

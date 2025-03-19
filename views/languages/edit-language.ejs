@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Language Info</title>
+        <link rel="stylesheet" href="/public/style.css">
+    </head>
+
+    <body>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/languages">Programming Languages List</a>
+
+                <h1>Edit Programming Language</h1>
+
+                <form action="/language-edited" method="POST">
+                    <div class="form-control">
+                        <label for="language-name">Language Name:</label>
+                        <input type="text" name="name" id="language-name" required value="<%= language.name %>" />
+                    </div>
+
+                    <div class="form-control">
+                        <label for="language-description">Description:</label>
+                        <textarea name="description" id="language-description" required><%= language.description %></textarea>
+                    </div>
+
+                    <input type="hidden" name="id" value="<%= language.id %>" />
+                    <button type="submit">Update Language</button>
+                </form>    
+            </div>  
+        </div>
+    </body>
+</html>

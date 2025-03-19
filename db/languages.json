@@ -1,0 +1,17 @@
+[
+  {
+    "id": "1",
+    "name": "JavaScript",
+    "description": "Versatile and popular."
+  },
+  {
+    "id": "2",
+    "name": "Python",
+    "description": "Great for data science."
+  },
+  {
+    "id": "3",
+    "name": "Rust",
+    "description": "Safe and fast systems language..."
+  }
+]

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Language Info</title>
+        <link rel="stylesheet" href="/public/style.css">
+    </head>
+
+    <body>
+        <div class="body-container">
+            <% if (language) { %>             
+                <div>
+                    <a href="/">Home Page</a>
+                    <a href="/languages">Languages List</a>
+    
+                    <h1>Language: <%= language.name %></h1>                
+                    <p>Description:<%= language.description %></p>
+    
+                    <h2>Students picked this language:</h2>
+                    
+                    <ul class="language-students-list">                                
+                        <% if (languageStudents.length > 0) { %>
+                                <% languageStudents.forEach(student => { %>
+                                    <li><%= student.name %> <%= student.surname %></li>
+                                <% }) %>
+                        <% } else { %> 
+                            <li>No students assigned..</li>                                        
+                        <% } %>
+                    </ul>
+    
+                    <a href="/edit-language/<%= language.id %>"><button>Edit Language Info</button></a>
+    
+                    <form action="/delete-language" method="POST" style="display:inline;">
+                        <input type="hidden" name="languageId" value="<%= language.id %>" />
+                        <button type="submit">Delete Language</button>
+                    </form>
+                </div>        
+        <% } else { %>
+            <h1>Language not found</h1><a href="/languages">Back to Languages</a>
+        <% } %>
+        </div>    
+    </body>
+</html>

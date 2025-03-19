@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Edit Student</title>
+        <link rel="stylesheet" href="/public/style.css">
+    </head>
+    
+    <body>
+        <div class="body-container">
+            <div>
+                <h1>Edit Student's Data</h1> 
+                
+                <form action="/student-edited" method="POST" id="edit-student-form">
+                    <div class="form-control">
+                        <label for="student-name">Name:</label>
+                        <input type="text" name="name" id="student-name" required value="<%= student.name %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="student-surname">Surname:</label>
+                        <input type="text" name="surname" id="student-surname" required value="<%= student.surname %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="student-age">Age:</label>
+                        <input type="number" name="age" id="student-age" required value="<%= student.age %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="student-phone">Phone:</label>
+                        <input type="tel" name="phone" id="student-phone" required value="<%= student.phone %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="student-email">Email:</label>
+                        <input type="email" name="email" id="student-email" required value="<%= student.email %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="student-it-knowledge">IT Knowledge:</label>
+                        <input type="range" name="itKnowledge" id="student-it-knowledge" required value="<%= student.itKnowledge %>" min="0" max="10" step="0.5"/>
+                        <output id="it-knowledge-output">5</output>
+                    </div>
+    
+                    <fieldset>
+                        <legend>Group:</legend>
+    
+                        <div class="form-control">
+                            <input type="radio" name="group" id="group-1" value="TYPE 20" <%= student.group === 'TYPE 20' ? 'checked' : '' %> />
+                            <label for="group-1">TYPE 20gr.</label>
+                        </div>
+    
+                        <div class="form-control">
+                            <input type="radio" name="group" id="group-2" value="TYPE 21" <%= student.group === 'TYPE 21' ? 'checked' : '' %> />
+                            <label for="group-2">TYPE 21gr.</label>
+                        </div>
+    
+                        <div class="form-control">
+                            <input type="radio" name="group" id="group-3" value="TYPE 22" <%= student.group === 'TYPE 22' ? 'checked' : '' %> />
+                            <label for="group-3">TYPE 22gr.</label>
+                        </div>
+                    </fieldset>
+    
+                    <fieldset>
+                        <legend>Programming Languages:</legend>
+    
+                        <div class="form-control">
+                            <input type="checkbox" name="interests" id="language-1" value="JavaScript" <%= student.interests.includes('JavaScript') ? 'checked' : '' %> />
+                            <label for="language-1">JavaScript</label>
+                        </div>
+    
+                        <div class="form-control">
+                            <input type="checkbox" name="interests" id="language-2" value="Rust" <%= student.interests.includes('Rust') ? 'checked' : '' %> />
+                            <label for="language-2">Rust</label>
+                        </div>
+    
+                        <div class="form-control">
+                            <input type="checkbox" name="interests" id="language-3" value="Python" <%= student.interests.includes('Python') ? 'checked' : '' %> />
+                            <label for="language-3">Python</label>
+                        </div>                    
+                    </fieldset>
+    
+                    <button type="submit">Update Info</button>
+    
+                    <input type="hidden" name="id" value="<%= student.id %>" />
+                </form>
+    
+                <script>
+                    const itKnowledgeInput = document.getElementById('student-it-knowledge')
+                    const itKnowledgeOutput = document.getElementById('it-knowledge-output')
+    
+                    itKnowledgeInput.addEventListener('input', function () {
+                        itKnowledgeOutput.textContent = this.value
+                    })
+                    
+                    itKnowledgeOutput.textContent = itKnowledgeInput.value
+                </script>
+            </div>
+
+        </div>        
+    </body>
+</html>

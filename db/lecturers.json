@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "name": "Alice",
+    "surname": "Smith",
+    "phone": "+123456789",
+    "email": "alice.smith@example.com",
+    "age": 40,
+    "subjects": [
+      "Computer Science",
+      "Programming",
+      "Mathematics"
+    ],
+    "yearsOfExperience": 15,
+    "favoriteLanguage": "JavaScript"
+  },
+  {
+    "name": "Bob",
+    "surname": "Johnson",
+    "phone": "+987654321",
+    "email": "bob.johnson@example.com",
+    "age": "50",
+    "subjects": [
+      "Mathematics, Physics, Computer Science"
+    ],
+    "yearsOfExperience": "24",
+    "favoriteLanguage": "Python",
+    "id": "2"
+  }
+]
