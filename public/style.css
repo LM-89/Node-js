@@ -83,8 +83,9 @@ ul a:hover {
 .lecturers-list,
 .subjects-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 15px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    width: 100%;
 }
 
 .groups-list li,
