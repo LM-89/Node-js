@@ -1,26 +1,28 @@
 <%- include('../partials/header', { title: 'Lecturers' }) %>
 
-    <div class="body-container">
-        <div>
-            <a href="/">Home Page</a>
-            <a href="/create-lecturer">Create a Lecturer</a>
-
-            <h1>Lecturers List</h1>
-            
-            <ul>
-                <% lecturers.map(lecturer => { %>
-                    <li>
-                        <a href="/lecturers/<%= lecturer.id %>"><%= lecturer.name %> <%= lecturer.surname %></a>
-                        <p>Phone: <%= lecturer.phone %></p>
-                        <p>Email: <%= lecturer.email %></p>
-                        <p>Age: <%= lecturer.age %></p>
-                        <p>Subjects: <%= lecturer.subjects.join(', ') %></p>
-                        <p>Years of Experience: <%= lecturer.yearsOfExperience %></p>
-                        <p>Favorite Language: <%= lecturer.favoriteLanguage %></p>
-                    </li>
-                <% }) %>
-            </ul>                
+    <main>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/create-lecturer">Create a Lecturer</a>
+    
+                <h1>Lecturers List</h1>
+                
+                <ul>
+                    <% lecturers.map(lecturer => { %>
+                        <li>
+                            <a href="/lecturers/<%= lecturer.id %>"><%= lecturer.name %> <%= lecturer.surname %></a>
+                            <p>Phone: <%= lecturer.phone %></p>
+                            <p>Email: <%= lecturer.email %></p>
+                            <p>Age: <%= lecturer.age %></p>
+                            <p>Subjects: <%= lecturer.subjects.join(', ') %></p>
+                            <p>Years of Experience: <%= lecturer.yearsOfExperience %></p>
+                            <p>Favorite Language: <%= lecturer.favoriteLanguage %></p>
+                        </li>
+                    <% }) %>
+                </ul>                
+            </div>
         </div>
-    </div>
+    </main>
 
 <%- include('../partials/global-footer') %>

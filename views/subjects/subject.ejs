@@ -1,36 +1,38 @@
 <%- include('../partials/header', { title: subject.name }) %>
 
-    <div class="body-container">
-        <% if (subject) { %>             
-            <div>
-                <a href="/">Home Page</a>
-                <a href="/subjects">Subjects List</a>
-
-                <h1>Subject: <%= subject.name %></h1>                
-                <p>Description: <%= subject.description %></p>
-
-                <h2>Lecturers teaching this subject:</h2>
-                
-                <ul class="subject-lecturers-list">                                
-                    <% if (subjectLecturers.length > 0) { %>
-                            <% subjectLecturers.forEach(lecturer => { %>
-                                <li><%= lecturer.name %> <%= lecturer.surname %></li>
-                            <% }) %>
-                    <% } else { %> 
-                        <li>No lecturers found..</li>                                        
-                    <% } %>
-                </ul>
-
-                <a href="/edit-subject/<%= subject.id %>"><button>Edit Subject Info</button></a>
-
-                <form action="/delete-subject" method="POST" style="display:inline;">
-                    <input type="hidden" name="subjectId" value="<%= subject.id %>" />
-                    <button type="submit">Delete Subject</button>
-                </form>
-            </div>        
-        <% } else { %>
-            <h1>Subject not found</h1><a href="/subjects">Back to Subjects</a>
-        <% } %>
-    </div>
+    <main>
+        <div class="body-container">
+            <% if (subject) { %>             
+                <div>
+                    <a href="/">Home Page</a>
+                    <a href="/subjects">Subjects List</a>
+    
+                    <h1>Subject: <%= subject.name %></h1>                
+                    <p>Description: <%= subject.description %></p>
+    
+                    <h2>Lecturers teaching this subject:</h2>
+                    
+                    <ul class="subject-lecturers-list">                                
+                        <% if (subjectLecturers.length > 0) { %>
+                                <% subjectLecturers.forEach(lecturer => { %>
+                                    <li><%= lecturer.name %> <%= lecturer.surname %></li>
+                                <% }) %>
+                        <% } else { %> 
+                            <li>No lecturers found..</li>                                        
+                        <% } %>
+                    </ul>
+    
+                    <a class="link-button" href="/edit-subject/<%= subject.id %>"><button>Edit Subject Info</button></a>
+    
+                    <form action="/delete-subject" method="POST" style="display:inline;">
+                        <input type="hidden" name="subjectId" value="<%= subject.id %>" />
+                        <button class="delete-button" type="submit">Delete Subject</button>
+                    </form>
+                </div>        
+            <% } else { %>
+                <h1>Subject not found</h1><a href="/subjects">Back to Subjects</a>
+            <% } %>
+        </div>
+    </main>
 
 <%- include('../partials/global-footer') %>

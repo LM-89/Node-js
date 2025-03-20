@@ -1,25 +1,27 @@
 <%- include('../partials/header', { title: lecturer.name + ' ' + lecturer.surname }) %>
 
-    <div class="body-container">
-        <div>
-            <a href="/">Home Page</a>
-            <a href="/lecturers">Lecturers List</a>
-
-            <h1><%= lecturer.name %> <%= lecturer.surname %></h1>
-            <p>Phone: <%= lecturer.phone %></p>
-            <p>Email: <%= lecturer.email %></p>
-            <p>Age: <%= lecturer.age %></p>
-            <p>Subjects: <%= lecturer.subjects.join(', ') %></p>
-            <p>Years of Experience: <%= lecturer.yearsOfExperience %></p>
-            <p>Favorite Programming Language: <%= lecturer.favoriteLanguage %></p>
-
-            <a href="/edit-lecturer/<%= lecturer.id %>"><button>Edit Lecturer's Info</button></a>
-
-            <form action="/delete-lecturer" method="POST" style="display:inline;">
-                <input type="hidden" name="lecturerId" value="<%= lecturer.id %>" />
-                <button type="submit">Delete Lecturer</button>
-            </form>
+    <main>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/lecturers">Lecturers List</a>
+    
+                <h1><%= lecturer.name %> <%= lecturer.surname %></h1>
+                <p>Phone: <%= lecturer.phone %></p>
+                <p>Email: <%= lecturer.email %></p>
+                <p>Age: <%= lecturer.age %></p>
+                <p>Subjects: <%= lecturer.subjects.join(', ') %></p>
+                <p>Years of Experience: <%= lecturer.yearsOfExperience %></p>
+                <p>Favorite Programming Language: <%= lecturer.favoriteLanguage %></p>
+    
+                <a class="link-button" href="/edit-lecturer/<%= lecturer.id %>"><button>Edit Lecturer's Info</button></a>
+    
+                <form action="/delete-lecturer" method="POST" style="display:inline;">
+                    <input type="hidden" name="lecturerId" value="<%= lecturer.id %>" />
+                    <button class="delete-button" type="submit">Delete Lecturer</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </main>
 
 <%- include('../partials/global-footer') %>

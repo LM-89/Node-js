@@ -1,27 +1,29 @@
 <%- include('../partials/header', { title: 'Languages' }) %>
 
-    <div class="body-container">
-        <div>
-            <a href="/">Home Page</a>
-            <a href="/create-language">Add New Language</a>
-
-            <% if (languages.length > 0) { %>
-            <h1>Languages List (<%= languages.length %>)</h1>
-            <% } else { %>
-                <h1>No Languages yet..</h1>        
-            <% } %>
-
-            <% if (languages.length > 0) { %>
-                <ul class="languages-list">
-                    <% languages.forEach(language => { %>
-                        <li>
-                            <a href="/languages/<%= language.id %>" class="language-info"><%= language.name %> (<%= language.id %>)</a>
-                            <p class="language-info">Description: <%= language.description %></p>
-                        </li>
-                    <% }) %>
-                </ul>
-            <% } %>
+    <main>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/create-language">Add New Language</a>
+    
+                <% if (languages.length > 0) { %>
+                <h1>Languages List (<%= languages.length %>)</h1>
+                <% } else { %>
+                    <h1>No Languages yet..</h1>        
+                <% } %>
+    
+                <% if (languages.length > 0) { %>
+                    <ul class="languages-list">
+                        <% languages.forEach(language => { %>
+                            <li>
+                                <a href="/languages/<%= language.id %>" class="language-info"><%= language.name %> (<%= language.id %>)</a>
+                                <p class="language-info">Description: <%= language.description %></p>
+                            </li>
+                        <% }) %>
+                    </ul>
+                <% } %>
+            </div>
         </div>
-    </div> 
+    </main> 
 
 <%- include('../partials/global-footer') %>

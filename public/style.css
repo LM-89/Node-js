@@ -4,10 +4,25 @@
     padding: 0;
 }
 
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 body {
-    background: #181414e0;
+    background-color: #181414e0;
     color: rgb(214, 209, 209);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    min-height: 100%;
 }
 
 a {
@@ -18,7 +33,8 @@ a {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2.5em;
+    padding: 35px 25px;
 }
 
 h2, h3, h4, h5 {
@@ -27,8 +43,40 @@ h2, h3, h4, h5 {
 
 p {
     font-size: 1.5em;
+    text-align: left;
 }
 
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+p {
+    background-color: rgb(56, 47, 65);
+    border: 0.5px solid rgb(75, 64, 87);
+    margin: 10px;
+    padding: 10px;
+}
+
+a:hover {
+    background-color: rgb(61, 52, 71);
+}
+
+ul a {
+    text-align: center;
+    padding: 15px 25px;
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(44, 37, 51);
+    border: 0.75px solid rgb(35, 29, 41);
+    border-radius: 10px;
+}
+
+ul a:hover {
+    box-shadow: 0px 0px 10px 2px rgb(230, 230, 230);
+}
 
 li {
     list-style: none;
@@ -42,12 +90,167 @@ li {
 }
 
 li:hover {
-    scale: 1.005;
+    scale: 1.009;
 }
 
 .body-container {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
     padding: 50px;
+    margin: 50px auto;
+    width: 90%;
+    background-color: rgb(44, 37, 51, 0.2);
+    box-shadow: 0px 0px 100px 3px rgba(180, 180, 180, 0.2);
+    border: 0.25px solid rgb(35, 29, 41);
 }
+
+footer {
+    text-align: center;
+    font-size: 0.6em;
+    padding: 20px;
+    background-color: #27232be0;
+    box-shadow: 0px 0px 100px 3px rgba(180, 180, 180, 0.2);
+}
+
+button {
+    padding: 10px 35px;
+    margin: 15px;
+    font-size: 16px;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(87, 81, 102);
+    box-shadow: 0px 0px 10px 2px rgb(230, 230, 230);
+    color: rgb(238, 237, 237);
+    max-width: 350px;
+}
+
+button:hover {
+    cursor: pointer;
+    scale: 1.05;
+    background-color: rgba(149, 75, 192, 0.61);
+    box-shadow: 0px 0px 15px 5px rgb(253, 251, 251);
+}
+
+.delete-button {
+    background-color: rgba(219, 2, 92, 0.15);
+}
+
+.delete-button:hover {
+    scale: 1.05;
+    background-color: rgba(236, 3, 100, 0.6);
+    box-shadow: 0px 0px 10px 2px rgb(255, 2, 2);
+}
+
+a.link-button:hover {
+    background-color: transparent;
+}
+
+input {
+    background-color: rgb(233, 233, 233);
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+}
+
+label {
+    font-size: 1.2em;
+    color: white;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width:40%;
+    background-color: #27232be0;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 15px auto;
+    box-shadow: 0px 0px 15px 3px rgba(180, 180, 180, 0.5);
+}
+
+fieldset {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+legend {
+    font-size: 1.5em;
+}
+
+select {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+#selected-subjects-list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    width: 100%;
+}
+
+#selected-subjects-list li {
+    width: 30%;
+    margin: 10px auto;
+}
+
+@keyframes neonFlicker {
+    0%, 100% {
+        text-shadow: 
+        0 0 6px rgba(149, 75, 192, 0.3), 
+        0 0 12px rgba(149, 75, 192, 0.4), 
+        0 0 18px rgba(149, 75, 192, 0.5), 
+        0 0 30px rgba(149, 75, 192, 0.61);
+    }
+    4% {
+        text-shadow: none;
+    }
+    8%, 12% {
+        text-shadow: 
+        0 0 5px rgba(149, 75, 192, 0.25), 
+        0 0 10px rgba(149, 75, 192, 0.35), 
+        0 0 16px rgba(149, 75, 192, 0.45);
+    }
+    15% {
+        text-shadow: none;
+    }
+    20%, 30% {
+        text-shadow: 
+        0 0 4px rgba(149, 75, 192, 0.2), 
+        0 0 8px rgba(149, 75, 192, 0.3), 
+        0 0 12px rgba(149, 75, 192, 0.4);
+    }
+    50% {
+        text-shadow: 
+        0 0 6px rgba(149, 75, 192, 0.25), 
+        0 0 12px rgba(149, 75, 192, 0.35);
+    }
+    75% {
+        text-shadow: 
+        0 0 8px rgba(149, 75, 192, 0.4), 
+        0 0 14px rgba(149, 75, 192, 0.5);
+    }
+    85%, 90% {
+        text-shadow: none;
+    }
+}
+  
+h1 {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    animation: neonFlicker 5s infinite alternate;
+}
+  

@@ -1,63 +1,108 @@
 <%- include('../partials/header', { title: lecturer.name + ' ' + lecturer.surname + ' | Edit' }) %>
 
-    <div class="body-container">
-        <div>
-            <a href="/">Home Page</a>
-            <a href="/lecturers">Lecturers List</a>
+    <main>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/lecturers">Lecturers List</a>
+    
+                <h1>Edit Lecturer</h1>
+    
+                <form action="/lecturer-edited" method="POST">
+                    <div class="form-control">
+                        <label for="lecturer-name">First Name:</label>
+                        <input type="text" name="name" id="lecturer-name" required value="<%= lecturer.name %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-surname">Surname:</label>
+                        <input type="text" name="surname" id="lecturer-surname" required value="<%= lecturer.surname %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-phone">Phone:</label>
+                        <input type="tel" name="phone" id="lecturer-phone" required value="<%= lecturer.phone %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-email">Email:</label>
+                        <input type="email" name="email" id="lecturer-email" required value="<%= lecturer.email %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-age">Age:</label>
+                        <input type="number" name="age" id="lecturer-age" required value="<%= lecturer.age %>" />
+                    </div>
+    
+                    
+                    <div class="form-control">
+                        <label for="lecturer-subjects">Subjects:</label>
+                        <select id="lecturer-subjects" multiple required>
+                            <% subjects.forEach(subject => { %>
+                                <option value="<%= subject.name %>"
+                                    <% if (lecturer.subjects.includes(subject.name)) { %> selected <% } %>>
+                                    <%= subject.name %>
+                                </option>
+                            <% }) %>
+                        </select>
+                    </div>  
+                    <ul id="selected-subjects-list"></ul>          
+                    <input type="hidden" name="subjects" id="hidden-subjects" value='<%= JSON.stringify(lecturer.subjects) %>'>
 
-            <h1>Edit Lecturer</h1>
-
-            <form action="/lecturer-edited" method="POST">
-                <div class="form-control">
-                    <label for="lecturer-name">First Name:</label>
-                    <input type="text" name="name" id="lecturer-name" required value="<%= lecturer.name %>" />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-surname">Surname:</label>
-                    <input type="text" name="surname" id="lecturer-surname" required value="<%= lecturer.surname %>" />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-phone">Phone:</label>
-                    <input type="tel" name="phone" id="lecturer-phone" required value="<%= lecturer.phone %>" />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-email">Email:</label>
-                    <input type="email" name="email" id="lecturer-email" required value="<%= lecturer.email %>" />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-age">Age:</label>
-                    <input type="number" name="age" id="lecturer-age" required value="<%= lecturer.age %>" />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-subjects">Subjects (comma separated):</label>
-                    <input type="text" name="subjects" id="lecturer-subjects" required value="<%= lecturer.subjects.join(', ') %>" />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-experience">Years of Experience:</label>
-                    <input type="number" name="yearsOfExperience" id="lecturer-experience" required value="<%= lecturer.yearsOfExperience %>" />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-favorite-language">Favorite Programming Language:</label>
-                    <select name="favoriteLanguage" id="lecturer-favorite-language" required>
-                        <% languages.forEach(language => { %>
-                            <option value="<%= language.name %>" <%= lecturer && lecturer.favoriteLanguage === language.name ? "selected" : "" %>>
-                                <%= language.name %>
-                            </option>
-                        <% }) %>
-                    </select>
-                </div>
-
-                <input type="hidden" name="id" value="<%= lecturer.id %>" />
-                <button type="submit">Update Lecturer</button>
-            </form>
+    
+                    <div class="form-control">
+                        <label for="lecturer-experience">Years of Experience:</label>
+                        <input type="number" name="yearsOfExperience" id="lecturer-experience" required value="<%= lecturer.yearsOfExperience %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-favorite-language">Favorite Programming Language:</label>
+                        <select name="favoriteLanguage" id="lecturer-favorite-language" required>
+                            <% languages.forEach(language => { %>
+                                <option value="<%= language.name %>" <%= lecturer && lecturer.favoriteLanguage === language.name ? "selected" : "" %>>
+                                    <%= language.name %>
+                                </option>
+                            <% }) %>
+                        </select>
+                    </div>
+    
+                    <input type="hidden" name="id" value="<%= lecturer.id %>" />
+                    <button type="submit">Update Lecturer</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </main>
 
 <%- include('../partials/global-footer') %>
+
+<script>
+    const subjectSelect = document.getElementById('lecturer-subjects');
+    const selectedSubjectsList = document.getElementById('selected-subjects-list');
+    const hiddenInput = document.getElementById('hidden-subjects');
+
+    function updateSelectedSubjects() {
+        const selected = Array.from(subjectSelect.options).filter(option => option.selected).map(option => option.value);
+
+        selectedSubjectsList.textContent = '';
+        selected.forEach(subject => {
+        const li = document.createElement('li');
+        li.textContent = subject;
+        selectedSubjectsList.appendChild(li);
+        });
+       
+        hiddenInput.value = JSON.stringify(selected);
+    }
+
+    subjectSelect.addEventListener('mousedown', (event) => {
+        if (event.target.tagName === 'OPTION') {
+        event.preventDefault()
+        event.target.selected = !event.target.selected
+        updateSelectedSubjects()
+        }
+    });
+
+    subjectSelect.addEventListener('change', updateSelectedSubjects);
+
+    document.addEventListener('DOMContentLoaded', updateSelectedSubjects);
+</script>
+  

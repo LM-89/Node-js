@@ -20,8 +20,9 @@ router.get('/subjects/:id', (req, res, next) => {
     }
 
     const lecturers = getLecturers()
+    
     const subjectLecturers = lecturers.filter(lecturer =>
-        lecturer.subjects.some(subj => subj.toLowerCase() === subject.name.toLowerCase())
+        lecturer.subjects.includes(subject.name)
     )
 
     res.render('subjects/subject', { subject, id, subjectLecturers })

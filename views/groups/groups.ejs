@@ -1,27 +1,29 @@
 <%- include('../partials/header', { title: 'Groups' }) %>
 
-    <div class="body-container">
-        <div>
-            <a href="/">Home Page</a>
-            <a href="/create-group">Create a Group</a>
-
-            <% if (groups.length > 0) { %>
-            <h1>Groups List (<%= groups.length %>)</h1>
-            <% } else { %>
-                <h1>No Groups yet..</h1>        
-            <% } %>
-
-            <% if (groups.length > 0) { %>
-                <ul class="groups-list">
-                    <% groups.forEach(group => { %>
-                        <li>
-                            <a href="/groups/<%= group.id %>" class="group-info"><%= group.name %> (<%= group.id %>)</a>
-                            <p class="group-info">Description: <%= group.description %></p>
-                        </li>
-                    <% }) %>
-                </ul>
-            <% } %>
+    <main>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/create-group">Create a Group</a>
+    
+                <% if (groups.length > 0) { %>
+                <h1>Groups List (<%= groups.length %>)</h1>
+                <% } else { %>
+                    <h1>No Groups yet..</h1>        
+                <% } %>
+    
+                <% if (groups.length > 0) { %>
+                    <ul class="groups-list">
+                        <% groups.forEach(group => { %>
+                            <li>
+                                <a href="/groups/<%= group.id %>" class="group-info"><%= group.name %> (<%= group.id %>)</a>
+                                <p class="group-info">Description: <%= group.description %></p>
+                            </li>
+                        <% }) %>
+                    </ul>
+                <% } %>
+            </div>
         </div>
-    </div>  
+    </main>  
 
 <%- include('../partials/global-footer') %>

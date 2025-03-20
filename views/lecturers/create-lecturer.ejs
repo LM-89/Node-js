@@ -1,60 +1,103 @@
 <%- include('../partials/header', { title: 'Lecturers | Add' }) %>
 
-    <div class="body-container">
-        <div>
-            <a href="/">Home Page</a>
-            <a href="/lecturers">Lecturers List</a>
+    <main>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/lecturers">Lecturers List</a>
+    
+                <h1>Add New Lecturer</h1>
+    
+                <form action="/lecturer-created" method="POST">
+                    <div class="form-control">
+                        <label for="lecturer-name">First Name:</label>
+                        <input type="text" name="name" id="lecturer-name" required />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-surname">Surname:</label>
+                        <input type="text" name="surname" id="lecturer-surname" required />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-phone">Phone:</label>
+                        <input type="tel" name="phone" id="lecturer-phone" required />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-email">Email:</label>
+                        <input type="email" name="email" id="lecturer-email" required />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-age">Age:</label>
+                        <input type="number" name="age" id="lecturer-age" required />
+                    </div>
 
-            <h1>Add New Lecturer</h1>
 
-            <form action="/lecturer-created" method="POST">
-                <div class="form-control">
-                    <label for="lecturer-name">First Name:</label>
-                    <input type="text" name="name" id="lecturer-name" required />
-                </div>
+                    <div class="form-control">
+                        <label for="lecturer-subjects">Subjects:</label>
+                        <select id="lecturer-subjects" multiple required>
+                            <% subjects.forEach(subject => { %>
+                                <option value="<%= subject.name %>">
+                                    <%= subject.name %>
+                                </option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <ul id="selected-subjects-list"></ul>
+                    <input type="hidden" name="subjects" id="hidden-subjects" value="[]">    
 
-                <div class="form-control">
-                    <label for="lecturer-surname">Surname:</label>
-                    <input type="text" name="surname" id="lecturer-surname" required />
-                </div>
 
-                <div class="form-control">
-                    <label for="lecturer-phone">Phone:</label>
-                    <input type="tel" name="phone" id="lecturer-phone" required />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-email">Email:</label>
-                    <input type="email" name="email" id="lecturer-email" required />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-age">Age:</label>
-                    <input type="number" name="age" id="lecturer-age" required />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-subjects">Subjects (comma separated):</label>
-                    <input type="text" name="subjects" id="lecturer-subjects" required />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-experience">Years of Experience:</label>
-                    <input type="number" name="yearsOfExperience" id="lecturer-experience" required />
-                </div>
-
-                <div class="form-control">
-                    <label for="lecturer-favorite-language">Favorite Programming Language:</label>
-                    <select name="favoriteLanguage" id="lecturer-favorite-language" required>
-                        <% languages.forEach(language => { %>
-                            <option value="<%= language.name %>"><%= language.name %></option>
-                        <% }) %>
-                    </select>
-                </div>
-
-                <button type="submit">Create Lecturer</button>
-            </form>
+                    <div class="form-control">
+                        <label for="lecturer-experience">Years of Experience:</label>
+                        <input type="number" name="yearsOfExperience" id="lecturer-experience" required />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="lecturer-favorite-language">Favorite Programming Language:</label>
+                        <select name="favoriteLanguage" id="lecturer-favorite-language" required>
+                            <% languages.forEach(language => { %>
+                                <option value="<%= language.name %>"><%= language.name %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+    
+                    <button type="submit">Create Lecturer</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </main>
 
 <%- include('../partials/global-footer') %>
+
+<script>
+    const subjectSelect = document.getElementById('lecturer-subjects');
+    const selectedSubjectsList = document.getElementById('selected-subjects-list');
+    const hiddenInput = document.getElementById('hidden-subjects');
+
+    function updateSelectedSubjects() {
+        const selected = Array.from(subjectSelect.options).filter(opt => opt.selected).map(opt => opt.value)
+
+        selectedSubjectsList.textContent = ''
+        selected.forEach(subject => {
+        const li = document.createElement('li')
+        li.textContent = subject;
+        selectedSubjectsList.appendChild(li)
+        });
+
+        hiddenInput.value = JSON.stringify(selected)
+    }
+
+    subjectSelect.addEventListener('mousedown', (event) => {
+        if (event.target.tagName === 'OPTION') {
+        event.preventDefault(); 
+        event.target.selected = !event.target.selected;
+        updateSelectedSubjects();
+        }
+    });
+
+    subjectSelect.addEventListener('change', updateSelectedSubjects);
+
+    document.addEventListener('DOMContentLoaded', updateSelectedSubjects);
+</script>

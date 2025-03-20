@@ -15,7 +15,9 @@ router.get('/languages/:id', (req, res, next) => {
     const { id } = req.params
     const language = getLanguageById(id)
     const students = getStudents()
-    const languageStudents = students.filter(student => student.language === language.name)    
+    const languageStudents = students.filter(student => 
+        student.interests.includes(language.name)
+    )    
 
     res.render('languages/language', { language, id, languageStudents })
 })

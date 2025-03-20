@@ -8,5 +8,10 @@
     "id": "3",
     "name": "Rust",
     "description": "Safe and fast systems language..."
+  },
+  {
+    "name": "JavaScript",
+    "description": "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
+    "id": "64f65269-da57-4825-a9ed-2a6bcbbf5877"
   }
 ]

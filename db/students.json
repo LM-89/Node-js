@@ -7,8 +7,11 @@
     "email": "student@example.com",
     "itKnowledge": "10",
     "group": "TYPE 20",
-    "id": "e85ba904-a985-4e6a-bff4-077eea7e0bd3",
-    "interests": []
+    "interests": [
+      "JavaScript",
+      "Rust"
+    ],
+    "id": "e85ba904-a985-4e6a-bff4-077eea7e0bd3"
   },
   {
     "name": "John",

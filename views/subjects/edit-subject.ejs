@@ -1,27 +1,29 @@
 <%- include('../partials/header', { title: subject.name + ' | Edit' }) %>
 
-    <div class="body-container">
-        <div>
-            <a href="/">Home Page</a>
-            <a href="/subjects">Subjects List</a>
-
-            <h1>Edit Subject Info</h1>
-
-            <form action="/subject-edited" method="POST">
-                <div class="form-control">
-                    <label for="subject-name">Subject Name:</label>
-                    <input type="text" name="name" id="subject-name" required value="<%= subject.name %>" />
-                </div>
-
-                <div class="form-control">
-                    <label for="subject-description">Description:</label>
-                    <textarea name="description" id="subject-description" required><%= subject.description %></textarea>
-                </div>
-
-                <input type="hidden" name="id" value="<%= subject.id %>" />
-                <button type="submit">Update Subject</button>
-            </form>
+    <main>
+        <div class="body-container">
+            <div>
+                <a href="/">Home Page</a>
+                <a href="/subjects">Subjects List</a>
+    
+                <h1>Edit Subject Info</h1>
+    
+                <form action="/subject-edited" method="POST">
+                    <div class="form-control">
+                        <label for="subject-name">Subject Name:</label>
+                        <input type="text" name="name" id="subject-name" required value="<%= subject.name %>" />
+                    </div>
+    
+                    <div class="form-control">
+                        <label for="subject-description">Description:</label>
+                        <textarea name="description" id="subject-description" required><%= subject.description %></textarea>
+                    </div>
+    
+                    <input type="hidden" name="id" value="<%= subject.id %>" />
+                    <button type="submit">Update Subject</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </main>
 
 <%- include('../partials/global-footer') %>
