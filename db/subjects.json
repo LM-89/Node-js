@@ -12,6 +12,106 @@
   {
     "id": "3",
     "name": "Physics",
-    "description": "Study of matter and energy"
+    "description": "Study of matter and energy."
+  },
+  {
+    "id": "4",
+    "name": "Programming",
+    "description": "The art of writing code and solving problems."
+  },
+  {
+    "id": "5",
+    "name": "Data Science",
+    "description": "Techniques and methods to extract insights from data."
+  },
+  {
+    "id": "6",
+    "name": "Machine Learning",
+    "description": "Algorithms that enable computers to learn from data."
+  },
+  {
+    "id": "7",
+    "name": "Artificial Intelligence",
+    "description": "Simulating human intelligence in machines."
+  },
+  {
+    "id": "8",
+    "name": "Software Engineering",
+    "description": "Systematic approaches to designing and building software."
+  },
+  {
+    "id": "9",
+    "name": "Databases",
+    "description": "Organized collections of data for efficient access."
+  },
+  {
+    "id": "10",
+    "name": "Cybersecurity",
+    "description": "Protection of computer systems from digital attacks."
+  },
+  {
+    "id": "11",
+    "name": "Computer Networks",
+    "description": "Interconnected systems for data communication."
+  },
+  {
+    "id": "12",
+    "name": "Operating Systems",
+    "description": "Software that manages hardware and software resources."
+  },
+  {
+    "id": "13",
+    "name": "Web Development",
+    "description": "Building and maintaining websites and web applications."
+  },
+  {
+    "id": "14",
+    "name": "User Experience",
+    "description": "Designing products that provide meaningful user interactions."
+  },
+  {
+    "id": "15",
+    "name": "Frontend Engineering",
+    "description": "Development of user interfaces and client-side functionality."
+  },
+  {
+    "id": "16",
+    "name": "Embedded Systems",
+    "description": "Computing systems embedded within hardware devices."
+  },
+  {
+    "id": "17",
+    "name": "Computer Architecture",
+    "description": "Design and organization of computer systems."
+  },
+  {
+    "id": "18",
+    "name": "Low-Level Programming",
+    "description": "Programming that operates close to the hardware level."
+  },
+  {
+    "id": "19",
+    "name": "Statistics",
+    "description": "Collection, analysis, interpretation, and presentation of data."
+  },
+  {
+    "id": "20",
+    "name": "Economics",
+    "description": "Study of production, consumption, and wealth distribution."
+  },
+  {
+    "id": "21",
+    "name": "Philosophy",
+    "description": "Exploration of fundamental questions about existence and knowledge."
+  },
+  {
+    "id": "22",
+    "name": "Biology",
+    "description": "Study of living organisms and life processes."
+  },
+  {
+    "id": "23",
+    "name": "Chemistry",
+    "description": "Study of substances and their properties and reactions."
   }
 ]

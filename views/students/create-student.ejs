@@ -44,41 +44,36 @@
     
                     <fieldset>
                         <legend> Group </legend>
-    
-                        <div class="form-control">
-                            <input type="radio" name="group" id="group-1" value="TYPE 20" checked />
-                            <label for="group-1">TYPE 20gr.</label>
-                        </div>
-    
-                        <div class="form-control">
-                            <input type="radio" name="group" id="group-2" value="TYPE 21" checked />
-                            <label for="group-2">TYPE 21gr.</label>
-                        </div>
-    
-                        <div class="form-control">
-                            <input type="radio" name="group" id="group-3" value="TYPE 22" checked />
-                            <label for="group-3">TYPE 22gr.</label>
-                        </div>
+                        <% groups.forEach(group => { %>
+                            <div class="form-control">
+                            <input type="radio" name="group" id="group-<%= group.id %>" value="<%= group.name %>" 
+                            <%= group.name === "TYPE 20" ? 'checked' : '' %> />
+                            <label for="group-<%= group.id %>"><%= group.name %> - <%= group.description %></label>
+                            </div>
+                        <% }) %>
                     </fieldset>
     
                     <fieldset>
                         <legend> Programming Languages </legend>
-    
-                        <div class="form-control">
-                            <input type="checkbox" name="interests" id="language-1" value="JavaScript" checked />
-                            <label for="language-1">JavaScript</label>
-                        </div>
-    
-                        <div class="form-control">
-                            <input type="checkbox" name="interests" id="language-2" value="Rust" />
-                            <label for="language-2">Rust</label>
-                        </div>
-    
-                        <div class="form-control">
-                            <input type="checkbox" name="interests" id="language-3" value="Python" />
-                            <label for="language-3">Python</label>
-                        </div>                    
-                    </fieldset>
+                        <p>You can choose up to 3 programming languages.</p>
+                        <% languages.forEach(language => { %>
+                          <div class="form-control">
+                            <input type="checkbox" name="interests" id="language-<%= language.id %>" value="<%= language.name %>">
+                            <label for="language-<%= language.id %>"><%= language.name %></label>
+                          </div>
+                        <% }) %>
+                      </fieldset>
+                      
+                      <fieldset>
+                        <legend> Academic Subjects </legend>
+                        <p>You can choose up to 7 subjects.</p>
+                        <% subjects.forEach(subject => { %>
+                          <div class="form-control">
+                            <input type="checkbox" name="subjects" id="subject-<%= subject.id %>" value="<%= subject.name %>">
+                            <label for="subject-<%= subject.id %>"><%= subject.name %></label>
+                          </div>
+                        <% }) %>
+                      </fieldset>
     
                     <button type="submit">Create a Student Record</button>
                 </form>
@@ -87,3 +82,53 @@
     </main>
 
 <%- include('../partials/student-form-footer') %>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+
+        const maxLanguages = 3
+        const languageCheckboxes = document.querySelectorAll('input[name="interests"]')
+
+        languageCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkedCount = document.querySelectorAll('input[name="interests"]:checked').length
+
+                if (checkedCount >= maxLanguages) {
+                    languageCheckboxes.forEach(box => {
+                        if (!box.checked) {
+                            box.disabled = true
+                        }
+                    })
+                } else {
+                    languageCheckboxes.forEach(box => {
+                        box.disabled = false
+                    })
+                }
+            })
+        })
+
+
+
+        const maxSubjects = 7
+        const subjectCheckboxes = document.querySelectorAll('input[name="subjects"]')
+
+        subjectCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+            const checkedCount = document.querySelectorAll('input[name="subjects"]:checked').length
+
+                if (checkedCount >= maxSubjects) {
+                    subjectCheckboxes.forEach(box => {
+                        if (!box.checked) {
+                            box.disabled = true
+                        }
+                    })
+                } else {
+                    subjectCheckboxes.forEach(box => {
+                        box.disabled = false
+                    })
+                }
+            })
+        })
+    })
+</script>
+    

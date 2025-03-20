@@ -13,5 +13,25 @@
     "id": "3",
     "name": "TYPE 22",
     "description": "Group TYPE 22"
+  },
+  {
+    "id": "4",
+    "name": "TYPE 23",
+    "description": "Group TYPE 23"
+  },
+  {
+    "id": "5",
+    "name": "TYPE 24",
+    "description": "Group TYPE 24"
+  },
+  {
+    "id": "6",
+    "name": "TYPE 25",
+    "description": "Group TYPE 25"
+  },
+  {
+    "id": "7",
+    "name": "TYPE 26",
+    "description": "Group TYPE 26"
   }
 ]

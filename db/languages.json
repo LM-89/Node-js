@@ -10,8 +10,113 @@
     "description": "Safe and fast systems language..."
   },
   {
+    "id": "4",
     "name": "JavaScript",
-    "description": "JavaScript is a scripting or programming language that allows you to implement complex features on web pages.",
-    "id": "64f65269-da57-4825-a9ed-2a6bcbbf5877"
+    "description": "Versatile language for web development."
+  },
+  {
+    "id": "5",
+    "name": "TypeScript",
+    "description": "JavaScript with static types for better scalability."
+  },
+  {
+    "id": "6",
+    "name": "C++",
+    "description": "High-performance language for system and game development."
+  },
+  {
+    "id": "7",
+    "name": "Go",
+    "description": "Efficient and scalable language for backend and cloud applications."
+  },
+  {
+    "id": "8",
+    "name": "Kotlin",
+    "description": "Modern language for Android and backend development."
+  },
+  {
+    "id": "9",
+    "name": "Swift",
+    "description": "Apple’s programming language for iOS and macOS apps."
+  },
+  {
+    "id": "10",
+    "name": "Ruby",
+    "description": "Elegant and productive language, popular for web development."
+  },
+  {
+    "id": "11",
+    "name": "PHP",
+    "description": "Widely used server-side scripting language for web development."
+  },
+  {
+    "id": "12",
+    "name": "C#",
+    "description": "Powerful language for game development and enterprise applications."
+  },
+  {
+    "id": "13",
+    "name": "Dart",
+    "description": "Optimized for UI development, especially with Flutter."
+  },
+  {
+    "id": "14",
+    "name": "Scala",
+    "description": "Combines functional and object-oriented programming on the JVM."
+  },
+  {
+    "id": "15",
+    "name": "Haskell",
+    "description": "A purely functional language known for strong static typing."
+  },
+  {
+    "id": "16",
+    "name": "Lua",
+    "description": "Lightweight scripting language, popular in game development."
+  },
+  {
+    "id": "17",
+    "name": "Perl",
+    "description": "Powerful text processing and scripting language."
+  },
+  {
+    "id": "18",
+    "name": "R",
+    "description": "Designed for statistical computing and data analysis."
+  },
+  {
+    "id": "19",
+    "name": "Julia",
+    "description": "High-performance language for numerical computing."
+  },
+  {
+    "id": "20",
+    "name": "Elixir",
+    "description": "Scalable and concurrent language built on the Erlang VM."
+  },
+  {
+    "id": "21",
+    "name": "F#",
+    "description": "Functional-first programming language for .NET."
+  },
+  {
+    "id": "22",
+    "name": "Clojure",
+    "description": "A modern Lisp dialect that runs on the JVM."
+  },
+  {
+    "id": "23",
+    "name": "Erlang",
+    "description": "Designed for scalable and fault-tolerant systems."
+  },
+  {
+    "id": "24",
+    "name": "Objective-C",
+    "description": "Previously the primary language for iOS/macOS development."
+  },
+  {
+    "id": "25",
+    "name": "Bash",
+    "description": "A widely used Unix shell and scripting language."
   }
 ]

@@ -28,5 +28,80 @@
     "yearsOfExperience": "24",
     "favoriteLanguage": "Python",
     "id": "2"
+  },
+  {
+    "name": "Charlie",
+    "surname": "Williams",
+    "phone": "+1122334455",
+    "email": "charlie.williams@example.com",
+    "age": "45",
+    "subjects": [
+      "Data Science",
+      "Machine Learning",
+      "Artificial Intelligence"
+    ],
+    "yearsOfExperience": "20",
+    "favoriteLanguage": "R",
+    "id": "3"
+  },
+  {
+    "name": "Diana",
+    "surname": "Brown",
+    "phone": "+5566778899",
+    "email": "diana.brown@example.com",
+    "age": "38",
+    "subjects": [
+      "Software Engineering",
+      "Databases",
+      "Programming"
+    ],
+    "yearsOfExperience": "14",
+    "favoriteLanguage": "Java",
+    "id": "4"
+  },
+  {
+    "name": "Ethan",
+    "surname": "Davis",
+    "phone": "+9988776655",
+    "email": "ethan.davis@example.com",
+    "age": "42",
+    "subjects": [
+      "Cybersecurity",
+      "Computer Networks",
+      "Operating Systems"
+    ],
+    "yearsOfExperience": "18",
+    "favoriteLanguage": "C++",
+    "id": "5"
+  },
+  {
+    "name": "Fiona",
+    "surname": "Miller",
+    "phone": "+3344556677",
+    "email": "fiona.miller@example.com",
+    "age": "37",
+    "subjects": [
+      "Web Development",
+      "User Experience",
+      "Frontend Engineering"
+    ],
+    "yearsOfExperience": "12",
+    "favoriteLanguage": "JavaScript",
+    "id": "6"
+  },
+  {
+    "name": "George",
+    "surname": "Anderson",
+    "phone": "+2233445566",
+    "email": "george.anderson@example.com",
+    "age": "55",
+    "subjects": [
+      "Embedded Systems",
+      "Computer Architecture",
+      "Low-Level Programming"
+    ],
+    "yearsOfExperience": "30",
+    "favoriteLanguage": "Assembly",
+    "id": "7"
   }
 ]

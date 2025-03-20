@@ -14,6 +14,7 @@
                     <p class="student-info">IT Knowledge: <%= student.itKnowledge %>/10</p>
                     <p class="student-info">Group: <%= student.group %></p>
                     <p class="student-info">Programming Languages: <%= student.interests.join(', ') %>.</p>
+                    <p class="student-info">Subjects: <%= student.subjects && student.subjects.length ? student.subjects.join(', ') : 'No subjects selected' %>.</p>
         
                     <form action="/delete-student" method="POST">
                         <button class="delete-button" type="submit">Delete Student</button>

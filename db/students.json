@@ -11,64 +11,446 @@
       "JavaScript",
       "Rust"
     ],
-    "id": "e85ba904-a985-4e6a-bff4-077eea7e0bd3"
+    "id": "1"
   },
   {
-    "name": "John",
-    "surname": "Doe",
-    "age": "36",
-    "phone": "+37077717033",
-    "email": "student@example.com",
-    "itKnowledge": "5",
+    "name": "Emma",
+    "surname": "Johnson",
+    "age": "22",
+    "phone": "+37077717001",
+    "email": "emma.johnson@example.com",
+    "itKnowledge": "8",
+    "group": "TYPE 25",
+    "interests": [
+      "Python",
+      "Kotlin",
+      "Haskell"
+    ],
+    "subjects": [
+      "Mathematics",
+      "Computer Science",
+      "Data Science",
+      "Machine Learning",
+      "Artificial Intelligence",
+      "Cybersecurity",
+      "Computer Networks"
+    ],
+    "id": "2"
+  },
+  {
+    "name": "Liam",
+    "surname": "Williams",
+    "age": "25",
+    "phone": "+37077717002",
+    "email": "liam.williams@example.com",
+    "itKnowledge": "9",
     "group": "TYPE 22",
+    "interests": [
+      "C++",
+      "Game Development"
+    ],
+    "id": "3"
+  },
+  {
+    "name": "Sophia",
+    "surname": "Brown",
+    "age": "21",
+    "phone": "+37077717003",
+    "email": "sophia.brown@example.com",
+    "itKnowledge": "7",
+    "group": "TYPE 23",
+    "interests": [
+      "Java",
+      "Mobile Development"
+    ],
+    "id": "4"
+  },
+  {
+    "name": "Noah",
+    "surname": "Jones",
+    "age": "24",
+    "phone": "+37077717004",
+    "email": "noah.jones@example.com",
+    "itKnowledge": "6",
+    "group": "TYPE 20",
+    "interests": [
+      "Rust",
+      "Systems Programming"
+    ],
+    "id": "5"
+  },
+  {
+    "name": "Olivia",
+    "surname": "Garcia",
+    "age": "23",
+    "phone": "+37077717005",
+    "email": "olivia.garcia@example.com",
+    "itKnowledge": "9",
+    "group": "TYPE 24",
     "interests": [
       "JavaScript",
-      "Rust",
-      "Python"
+      "Web Development"
     ],
-    "id": "dcecaadb-667d-4e74-80c0-acaa7009ea64"
+    "id": "6"
   },
   {
-    "name": "John",
-    "surname": "Doe",
-    "age": "36",
-    "phone": "+37077717033",
-    "email": "student@example.com",
-    "itKnowledge": "5",
-    "group": "TYPE 22",
-    "interests": [
-      "JavaScript"
-    ],
-    "id": "7ac06a5e-3c3b-4339-ba8e-a11d9b70792d"
-  },
-  {
-    "name": "John",
-    "surname": "Doe",
-    "age": "40",
-    "phone": "+37077717033",
-    "email": "student@example.com",
+    "name": "William",
+    "surname": "Martinez",
+    "age": "26",
+    "phone": "+37077717006",
+    "email": "william.martinez@example.com",
     "itKnowledge": "10",
     "group": "TYPE 22",
     "interests": [
-      "JavaScript",
-      "Rust",
-      "Python"
+      "Go",
+      "Cloud Computing"
     ],
-    "id": "029b12fe-5afe-455c-be3d-9059d19aac88"
+    "id": "7"
+  },
+  {
+    "name": "Isabella",
+    "surname": "Hernandez",
+    "age": "22",
+    "phone": "+37077717007",
+    "email": "isabella.hernandez@example.com",
+    "itKnowledge": "8",
+    "group": "TYPE 23",
+    "interests": [
+      "Kotlin",
+      "Android Development"
+    ],
+    "id": "8"
+  },
+  {
+    "name": "James",
+    "surname": "Lopez",
+    "age": "27",
+    "phone": "+37077717008",
+    "email": "james.lopez@example.com",
+    "itKnowledge": "7",
+    "group": "TYPE 24",
+    "interests": [
+      "PHP",
+      "Backend Development"
+    ],
+    "id": "9"
+  },
+  {
+    "name": "Ava",
+    "surname": "Gonzalez",
+    "age": "20",
+    "phone": "+37077717009",
+    "email": "ava.gonzalez@example.com",
+    "itKnowledge": "6",
+    "group": "TYPE 21",
+    "interests": [
+      "Swift",
+      "iOS Development"
+    ],
+    "id": "10"
+  },
+  {
+    "name": "Benjamin",
+    "surname": "Wilson",
+    "age": "23",
+    "phone": "+37077717010",
+    "email": "benjamin.wilson@example.com",
+    "itKnowledge": "9",
+    "group": "TYPE 22",
+    "interests": [
+      "Python",
+      "AI & Machine Learning"
+    ],
+    "id": "11"
+  },
+  {
+    "name": "Mia",
+    "surname": "Anderson",
+    "age": "22",
+    "phone": "+37077717011",
+    "email": "mia.anderson@example.com",
+    "itKnowledge": "8",
+    "group": "TYPE 23",
+    "interests": [
+      "C#",
+      "Game Development"
+    ],
+    "id": "12"
+  },
+  {
+    "name": "Lucas",
+    "surname": "Thomas",
+    "age": "24",
+    "phone": "+37077717012",
+    "email": "lucas.thomas@example.com",
+    "itKnowledge": "7",
+    "group": "TYPE 24",
+    "interests": [
+      "JavaScript",
+      "React"
+    ],
+    "id": "13"
+  },
+  {
+    "name": "Harper",
+    "surname": "Taylor",
+    "age": "21",
+    "phone": "+37077717013",
+    "email": "harper.taylor@example.com",
+    "itKnowledge": "10",
+    "group": "TYPE 20",
+    "interests": [
+      "TypeScript",
+      "Frontend Development"
+    ],
+    "id": "14"
+  },
+  {
+    "name": "Henry",
+    "surname": "Moore",
+    "age": "25",
+    "phone": "+37077717014",
+    "email": "henry.moore@example.com",
+    "itKnowledge": "9",
+    "group": "TYPE 21",
+    "interests": [
+      "Dart",
+      "Flutter Development"
+    ],
+    "id": "15"
+  },
+  {
+    "name": "Ella",
+    "surname": "Clark",
+    "age": "23",
+    "phone": "+37077717015",
+    "email": "ella.clark@example.com",
+    "itKnowledge": "7",
+    "group": "TYPE 22",
+    "interests": [
+      "Ruby",
+      "Full-Stack Development"
+    ],
+    "id": "16"
+  },
+  {
+    "name": "Alexander",
+    "surname": "Rodriguez",
+    "age": "26",
+    "phone": "+37077717016",
+    "email": "alexander.rodriguez@example.com",
+    "itKnowledge": "8",
+    "group": "TYPE 23",
+    "interests": [
+      "C",
+      "Embedded Systems"
+    ],
+    "id": "17"
+  },
+  {
+    "name": "Scarlett",
+    "surname": "Lewis",
+    "age": "24",
+    "phone": "+37077717017",
+    "email": "scarlett.lewis@example.com",
+    "itKnowledge": "9",
+    "group": "TYPE 24",
+    "interests": [
+      "Scala",
+      "Big Data"
+    ],
+    "id": "18"
+  },
+  {
+    "name": "Michael",
+    "surname": "Walker",
+    "age": "22",
+    "phone": "+37077717018",
+    "email": "michael.walker@example.com",
+    "itKnowledge": "10",
+    "group": "TYPE 21",
+    "interests": [
+      "Erlang",
+      "Distributed Systems"
+    ],
+    "id": "19"
+  },
+  {
+    "name": "Evelyn",
+    "surname": "Hall",
+    "age": "23",
+    "phone": "+37077717019",
+    "email": "evelyn.hall@example.com",
+    "itKnowledge": "6",
+    "group": "TYPE 22",
+    "interests": [
+      "Haskell",
+      "Functional Programming"
+    ],
+    "id": "20"
+  },
+  {
+    "name": "Daniel",
+    "surname": "Allen",
+    "age": "25",
+    "phone": "+37077717020",
+    "email": "daniel.allen@example.com",
+    "itKnowledge": "8",
+    "group": "TYPE 23",
+    "interests": [
+      "Perl",
+      "Scripting"
+    ],
+    "id": "21"
+  },
+  {
+    "name": "Madison",
+    "surname": "Young",
+    "age": "24",
+    "phone": "+37077717021",
+    "email": "madison.young@example.com",
+    "itKnowledge": "9",
+    "group": "TYPE 24",
+    "interests": [
+      "Elixir",
+      "Web Services"
+    ],
+    "id": "22"
+  },
+  {
+    "name": "David",
+    "surname": "King",
+    "age": "21",
+    "phone": "+37077717022",
+    "email": "david.king@example.com",
+    "itKnowledge": "7",
+    "group": "TYPE 21",
+    "interests": [
+      "Objective-C",
+      "macOS Development"
+    ],
+    "id": "23"
+  },
+  {
+    "name": "Grace",
+    "surname": "Scott",
+    "age": "22",
+    "phone": "+37077717023",
+    "email": "grace.scott@example.com",
+    "itKnowledge": "10",
+    "group": "TYPE 22",
+    "interests": [
+      "Lisp",
+      "AI Research"
+    ],
+    "id": "24"
+  },
+  {
+    "name": "Logan",
+    "surname": "Adams",
+    "age": "23",
+    "phone": "+37077717024",
+    "email": "logan.adams@example.com",
+    "itKnowledge": "6",
+    "group": "TYPE 23",
+    "interests": [
+      "Shell Scripting",
+      "Linux Administration"
+    ],
+    "id": "25"
+  },
+  {
+    "name": "Chloe",
+    "surname": "Baker",
+    "age": "24",
+    "phone": "+37077717025",
+    "email": "chloe.baker@example.com",
+    "itKnowledge": "8",
+    "group": "TYPE 24",
+    "interests": [
+      "F#",
+      "Finance Applications"
+    ],
+    "id": "26"
+  },
+  {
+    "name": "Matthew",
+    "surname": "Nelson",
+    "age": "22",
+    "phone": "+37077717026",
+    "email": "matthew.nelson@example.com",
+    "itKnowledge": "7",
+    "group": "TYPE 21",
+    "interests": [
+      "Cobol",
+      "Enterprise Systems"
+    ],
+    "id": "27"
+  },
+  {
+    "name": "Natalie",
+    "surname": "Carter",
+    "age": "23",
+    "phone": "+37077717027",
+    "email": "natalie.carter@example.com",
+    "itKnowledge": "9",
+    "group": "TYPE 22",
+    "interests": [
+      "Julia",
+      "Scientific Computing"
+    ],
+    "id": "28"
+  },
+  {
+    "name": "Jack",
+    "surname": "Mitchell",
+    "age": "21",
+    "phone": "+37077717028",
+    "email": "jack.mitchell@example.com",
+    "itKnowledge": "10",
+    "group": "TYPE 23",
+    "interests": [
+      "R",
+      "Data Analysis"
+    ],
+    "id": "29"
+  },
+  {
+    "name": "Zoe",
+    "surname": "Perez",
+    "age": "24",
+    "phone": "+37077717029",
+    "email": "zoe.perez@example.com",
+    "itKnowledge": "6",
+    "group": "TYPE 24",
+    "interests": [
+      "Prolog",
+      "Logic Programming"
+    ],
+    "id": "30"
   },
   {
     "name": "John",
     "surname": "Doe",
-    "age": "30",
+    "age": "36",
     "phone": "+37077717033",
     "email": "student@example.com",
-    "itKnowledge": "5",
-    "group": "TYPE 21",
+    "itKnowledge": "10",
+    "group": "TYPE 26",
     "interests": [
-      "JavaScript",
       "Rust",
-      "Python"
+      "C++",
+      "C#"
     ],
-    "id": "21049c0c-3af1-48b1-960a-cc7d31f39c1e"
+    "subjects": [
+      "Computer Science",
+      "Programming",
+      "Artificial Intelligence",
+      "Software Engineering",
+      "Databases",
+      "Operating Systems",
+      "Computer Architecture"
+    ],
+    "id": "6badc655-d9f7-4c8f-919c-f3573b645bae"
   }
 ]
