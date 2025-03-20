@@ -1,35 +1,27 @@
-<!DOCTYPE html>
+<%- include('../partials/header', { title: 'Subjects' }) %>
 
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Subjects</title>
-    </head>
+    <div class="body-container">
+        <div>
+            <a href="/">Home Page</a>
+            <a href="/create-subject">Create a Subject</a>
 
-    <body>
-        <div class="body-container">
-            <div>
-                <a href="/">Home Page</a>
-                <a href="/create-subject">Create a Subject</a>
-
-                <% if (subjects.length > 0) { %>
-                    <h1>Subjects List (<%= subjects.length %>)</h1>
-                <% } else { %>
-                    <h1>No Subjects yet..</h1>        
-                <% } %>
-        
-                <% if (subjects.length > 0) { %>
-                    <ul class="subjects-list">
-                        <% subjects.forEach(subject => { %>
-                            <li>
-                                <a href="/subjects/<%= subject.id %>" class="subject-info"><%= subject.name %> (<%= subject.id %>)</a>
-                                <p class="subject-info">Description: <%= subject.description %></p>
-                            </li>
-                        <% }) %>
-                    </ul>
-                <% } %>
-            </div>
+            <% if (subjects.length > 0) { %>
+                <h1>Subjects List (<%= subjects.length %>)</h1>
+            <% } else { %>
+                <h1>No Subjects yet..</h1>        
+            <% } %>
+    
+            <% if (subjects.length > 0) { %>
+                <ul class="subjects-list">
+                    <% subjects.forEach(subject => { %>
+                        <li>
+                            <a href="/subjects/<%= subject.id %>" class="subject-info"><%= subject.name %> (<%= subject.id %>)</a>
+                            <p class="subject-info">Description: <%= subject.description %></p>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } %>
         </div>
-    </body>
-</html>
+    </div>
+
+<%- include('../partials/global-footer') %>

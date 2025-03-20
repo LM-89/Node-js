@@ -1,10 +1,5 @@
 [
   {
-    "id": "1",
-    "name": "JavaScript",
-    "description": "Versatile and popular."
-  },
-  {
     "id": "2",
     "name": "Python",
     "description": "Great for data science."

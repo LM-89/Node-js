@@ -1,36 +1,27 @@
-<!DOCTYPE html>
+<%- include('../partials/header', { title: subject.name + ' | Edit' }) %>
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit Subject</title>
-        <link rel="stylesheet" href="/public/style.css">
-    </head>
+    <div class="body-container">
+        <div>
+            <a href="/">Home Page</a>
+            <a href="/subjects">Subjects List</a>
 
-    <body>
-        <div class="body-container">
-            <div>
-                <a href="/">Home Page</a>
-                <a href="/subjects">Subjects List</a>
+            <h1>Edit Subject Info</h1>
 
-                <h1>Edit Subject Info</h1>
+            <form action="/subject-edited" method="POST">
+                <div class="form-control">
+                    <label for="subject-name">Subject Name:</label>
+                    <input type="text" name="name" id="subject-name" required value="<%= subject.name %>" />
+                </div>
 
-                <form action="/subject-edited" method="POST">
-                    <div class="form-control">
-                        <label for="subject-name">Subject Name:</label>
-                        <input type="text" name="name" id="subject-name" required value="<%= subject.name %>" />
-                    </div>
+                <div class="form-control">
+                    <label for="subject-description">Description:</label>
+                    <textarea name="description" id="subject-description" required><%= subject.description %></textarea>
+                </div>
 
-                    <div class="form-control">
-                        <label for="subject-description">Description:</label>
-                        <textarea name="description" id="subject-description" required><%= subject.description %></textarea>
-                    </div>
-
-                    <input type="hidden" name="id" value="<%= subject.id %>" />
-                    <button type="submit">Update Subject</button>
-                </form>
-            </div>
+                <input type="hidden" name="id" value="<%= subject.id %>" />
+                <button type="submit">Update Subject</button>
+            </form>
         </div>
-    </body>
-</html>
+    </div>
+
+<%- include('../partials/global-footer') %>
