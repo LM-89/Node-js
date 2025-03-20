@@ -1,0 +1,50 @@
+Sukurti sistemą, kuris leistų valdyti studentų informacinę sistemą.
+
+1. Studentų valdymas:
+- /students - gauti visų studentų sąrašą
+- /students/:id - gauti konkretų studentą pagal jo id
+- /create-students - pridėti naują studentą
+- /edit-student/:id - atnaujinti studento informaciją
+- ištrinti studentą
+
+2. Grupių valdymas:
+- /groups - gauti visų grupių sąrašą
+- /groups/:id - gauti konkrečią grupę pagal jos id (atvaizduoti grupei priskirtus studentus)
+- /create-group - pridėti naują grupę
+- /edit-group/:id - atnaujinti grupės informaciją
+- ištrinti grupę
+
+3. Dominančių programavimo kalbų valdymas:
+- /programming-languages - gauti visų programavimo kalbų sąrašą
+- /programming-languages/:id - gauti konkrečią programavimo kalbą pagal jos id (atvaizduoti studentus, kurie yra pasirinkę šią programavimo kalbą, kaip dominančią)
+- /create-programming-language - pridėti naują programavimo kalbą
+- /edit-programming-language/:id - atnaujinti programavimo kalbos informaciją
+- ištrinti programavimo kalbą 
+
+4. Dėstytojų valdymas:
+- /lecturers - gauti visų dėstytojų sąrašą
+- /lecturers/:id - gauti konkretų dėstytoją pagal jo id (atvaizduoti dėstytojo mokomus dalykus ir studentų grupes)
+- /create-lecturer - pridėti naują dėstytoją
+- /edit-lecturer/:id - atnaujinti dėstytojo informaciją
+- ištrinti dėstytoją
+
+5. Dėstomų dalykų valdymas:
+- /subjects - gauti visų dalykų sąrašą
+- /subjects/:id - gauti konkretų dalyką pagal jo id (atvaizduoti dėstytojus, kurie dėsto šį dalyką)
+- /create-subject - pridėti naują dalyką
+- /edit-subject/:id - atnaujinti dalyko informaciją
+- ištrinti dalyką
+
+6. Atsiskaitymų valdymas:
+- /assignments - gauti visų atsiskaitymų sąrašą
+- /assignments/:id - gauti konkretaus atsiskaitymo informaciją
+- /assignments - pridėti naują atsiskaitymą
+- /assignments/:id - atnaujinti atsiskaitymo informaciją
+- /assignments/:id - ištrinti atsiskaitymą
+
+7. Pažymių valdymas:
+- /grades - gauti visų pažymių sąrašą
+- /grades/student/:id - gauti studento pažymius
+- /grades - pridėti naują pažymį
+- /grades/:id - atnaujinti pažymį
+- /grades/:id - ištrinti pažymį

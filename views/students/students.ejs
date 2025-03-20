@@ -1,39 +1,30 @@
-<!DOCTYPE html>
+<%- include('../partials/header', { title: 'Students' }) %>
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Students</title>
-        <link rel="stylesheet" href="/public/style.css">
-    </head>
-    
-    <body>
-        <div class="body-container">
-            <a href="/">Home Page</a>
-            <a href="/create-student">Create a Student Record</a>
+<div class="body-container">
+    <a href="/">Home Page</a>
+    <a href="/create-student">Create a Student Record</a>
 
-            <% if (students.length > 0) { %>
-                <h1>Students List (<%= students.length %>)</h1>
-            <% } else { %>
-                <h1>No Students yet..</h1>        
-            <% } %>
+    <% if (students.length > 0) { %>
+        <h1>Students List (<%= students.length %>)</h1>
+    <% } else { %>
+        <h1>No Students yet..</h1>        
+    <% } %>
 
-            <% if (students.length > 0) { %>
-                <ul class="students-list">
-                    <% students.forEach(student => { %>
-                        <li>
-                            <a href="/students/<%= student.id %>" class="student-info"><%= student.name %> <%= student.surname %></a>
-                            <p class="student-info">Age: <%= student.age %></p>
-                            <p class="student-info">Phone: <%= student.phone %></p>
-                            <p class="student-info">Email: <%= student.email %></p>
-                            <p class="student-info">IT Knowledge: <%= student.itKnowledge %>/10</p>
-                            <p class="student-info">Group: <%= student.group %></p>
-                            <p class="student-info">Programming Languages: <%= student.interests.join(', ') %></p>
-                        </li>
-                    <% }) %>
-                </ul>
-            <% } %>
-        </div>    
-    </body>
-</html>
+    <% if (students.length > 0) { %>
+        <ul class="students-list">
+            <% students.forEach(student => { %>
+                <li>
+                    <a href="/students/<%= student.id %>" class="student-info"><%= student.name %> <%= student.surname %></a>
+                    <p class="student-info">Age: <%= student.age %></p>
+                    <p class="student-info">Phone: <%= student.phone %></p>
+                    <p class="student-info">Email: <%= student.email %></p>
+                    <p class="student-info">IT Knowledge: <%= student.itKnowledge %>/10</p>
+                    <p class="student-info">Group: <%= student.group %></p>
+                    <p class="student-info">Programming Languages: <%= student.interests.join(', ') %></p>
+                </li>
+            <% }) %>
+        </ul>
+    <% } %>
+</div>  
+
+<%- include('../partials/global-footer') %>

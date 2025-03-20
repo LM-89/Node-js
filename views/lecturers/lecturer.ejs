@@ -1,34 +1,25 @@
-<!DOCTYPE html>
+<%- include('../partials/header', { title: lecturer.name + ' ' + lecturer.surname }) %>
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lecturer</title>
-        <link rel="stylesheet" href="/public/style.css">        
-    </head>
+    <div class="body-container">
+        <div>
+            <a href="/">Home Page</a>
+            <a href="/lecturers">Lecturers List</a>
 
-    <body>
-        <div class="body-container">
-            <div>
-                <a href="/">Home Page</a>
-                <a href="/lecturers">Lecturers List</a>
+            <h1><%= lecturer.name %> <%= lecturer.surname %></h1>
+            <p>Phone: <%= lecturer.phone %></p>
+            <p>Email: <%= lecturer.email %></p>
+            <p>Age: <%= lecturer.age %></p>
+            <p>Subjects: <%= lecturer.subjects.join(', ') %></p>
+            <p>Years of Experience: <%= lecturer.yearsOfExperience %></p>
+            <p>Favorite Programming Language: <%= lecturer.favoriteLanguage %></p>
 
-                <h1><%= lecturer.name %> <%= lecturer.surname %></h1>
-                <p>Phone: <%= lecturer.phone %></p>
-                <p>Email: <%= lecturer.email %></p>
-                <p>Age: <%= lecturer.age %></p>
-                <p>Subjects: <%= lecturer.subjects.join(', ') %></p>
-                <p>Years of Experience: <%= lecturer.yearsOfExperience %></p>
-                <p>Favorite Programming Language: <%= lecturer.favoriteLanguage %></p>
+            <a href="/edit-lecturer/<%= lecturer.id %>"><button>Edit Lecturer's Info</button></a>
 
-                <a href="/edit-lecturer/<%= lecturer.id %>"><button>Edit Lecturer's Info</button></a>
-
-                <form action="/delete-lecturer" method="POST" style="display:inline;">
-                    <input type="hidden" name="lecturerId" value="<%= lecturer.id %>" />
-                    <button type="submit">Delete Lecturer</button>
-                </form>
-            </div>
+            <form action="/delete-lecturer" method="POST" style="display:inline;">
+                <input type="hidden" name="lecturerId" value="<%= lecturer.id %>" />
+                <button type="submit">Delete Lecturer</button>
+            </form>
         </div>
-    </body>
-</html>
+    </div>
+
+<%- include('../partials/global-footer') %>

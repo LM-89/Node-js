@@ -1,0 +1,17 @@
+<script>
+    const itKnowledgeInput = document.getElementById('student-it-knowledge')
+    const itKnowledgeOutput = document.getElementById('it-knowledge-output')
+
+    itKnowledgeInput.addEventListener('input', function () {
+        itKnowledgeOutput.textContent = this.value
+    })
+
+    itKnowledgeOutput.textContent = itKnowledgeInput.value
+</script>
+
+<footer>
+    <p>Copyright © <%= currentDate %></p>
+</footer>  
+  
+</body>
+</html>

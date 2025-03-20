@@ -1,95 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const path = require('path')
-const fs = require('fs')
-const { v4: uuid } = require('uuid')
+const { getGroups, getGroupById, createGroup, updateGroup, deleteGroup } = require('../services/groups')
+const { getStudents } = require('../services/students')
 
 module.exports = router 
 
-// GET GROUPS
-function getGroups() {
-    const filePath = path.join('db', 'groups.json')
-
-    if (!fs.existsSync(filePath)) {
-        throw new Error('File does not exist')
-    }
-
-    const fileContent = fs.readFileSync(filePath)
-
-    const data = JSON.parse(fileContent)
-
-    return data
-}
-
-// GET STUDENTS
-function getStudents() {
-    const filePath = path.join('db', 'students.json')
-
-    if (!fs.existsSync(filePath)) {
-        throw new Error('File does not exist')
-    }
-
-    const fileContent = fs.readFileSync(filePath)
-
-    const data = JSON.parse(fileContent)
-
-    return data
-}
-
-//GET GROUP BY ID
-function getGroupById(id) {
-    const groups = getGroups()
-
-    return groups.find(group => group.id === id)
-}
-
-//CREATE/POST GROUP
-function createGroup(body) {
-    const id = uuid()
-    
-    const newGroup = { 
-        ...body,
-        id 
-    }
-
-    const groups = getGroups()
-
-    groups.push(newGroup)
-    
-    const stringifiedData = JSON.stringify(groups, null, 2)
-    
-    const filePath = path.join('db', 'groups.json')
-    fs.writeFileSync(filePath, stringifiedData)
-
-    return newGroup
-}
-
-//EDIT/UPDATE GROUP
-function updateGroup(data) {
-    const { id } = data
-
-    const groups = getGroups()
-
-    const updatedGroups = groups.map(group => group.id === id ? { ...group, ...data } : group)
-
-    const stringifiedData = JSON.stringify(updatedGroups, null, 2)
-    
-    const filePath = path.join('db', 'groups.json')
-    fs.writeFileSync(filePath, stringifiedData)
-
-    return data
-}
-
-//DELETE GROUP
-function deleteGroup(id) {
-    const groups = getGroups().filter(group => group.id !== id)
-      
-    const stringifiedData = JSON.stringify(groups, null, 2)
-    const filePath = path.join('db', 'groups.json')
-    fs.writeFileSync(filePath, stringifiedData)
-}
-
-//-----------------GROUPS-------------------
 
 router.get('/groups', (req, res, next) => {
     const groups = getGroups()

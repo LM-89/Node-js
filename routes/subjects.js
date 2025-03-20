@@ -1,95 +1,10 @@
 const express = require('express')
 const router = express.Router()
-const path = require('path')
-const fs = require('fs')
-const { v4: uuid } = require('uuid')
+const { getSubjects, getSubjectById, createSubject, updateSubject, deleteSubject } = require('../services/subjects')
+const { getLecturers } = require('../services/lecturers')
 
 module.exports = router 
 
-// GET SUBJECTS
-function getSubjects() {
-    const filePath = path.join('db', 'subjects.json')
-
-    if (!fs.existsSync(filePath)) {
-        throw new Error('File does not exist')
-    }
-
-    const fileContent = fs.readFileSync(filePath)
-
-    const data = JSON.parse(fileContent)
-
-    return data
-}
-
-// GET LECTURERS
-function getLecturers() {
-    const filePath = path.join('db', 'lecturers.json')
-
-    if (!fs.existsSync(filePath)) {
-        throw new Error('File does not exist')
-    }
-
-    const fileContent = fs.readFileSync(filePath)
-
-    const data = JSON.parse(fileContent)
-
-    return data
-}
-
-//GET SUBJECT BY ID
-function getSubjectById(id) {
-    const subjects = getSubjects()
-
-    return subjects.find(subject => subject.id === id)
-}
-
-//CREATE/POST SUBJECT
-function createSubject(body) {
-    const id = uuid()
-    
-    const newSubject = { 
-        ...body,
-        id 
-    }
-
-    const subjects = getSubjects()
-
-    subjects.push(newSubject)
-    
-    const stringifiedData = JSON.stringify(subjects, null, 2)
-    
-    const filePath = path.join('db', 'subjects.json')
-    fs.writeFileSync(filePath, stringifiedData)
-
-    return newSubject
-}
-
-//EDIT/UPDATE SUBJECT
-function updateSubject(data) {
-    const { id } = data
-
-    const subjects = getSubjects()
-
-    const updatedSubjects = subjects.map(subject => subject.id === id ? { ...subject, ...data } : subject)
-
-    const stringifiedData = JSON.stringify(updatedSubjects, null, 2)
-    
-    const filePath = path.join('db', 'subjects.json')
-    fs.writeFileSync(filePath, stringifiedData)
-
-    return data
-}
-
-//DELETE SUBJECT
-function deleteSubject(id) {
-    const subjects = getSubjects().filter(subject => subject.id !== id)
-      
-    const stringifiedData = JSON.stringify(subjects, null, 2)
-    const filePath = path.join('db', 'subjects.json')
-    fs.writeFileSync(filePath, stringifiedData)
-}
-
-// //-----------------SUBJECTS---------------------
 
 router.get('/subjects', (req, res, next) => {
     const subjects = getSubjects()

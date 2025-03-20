@@ -1,108 +1,87 @@
-<!DOCTYPE html>
+<%- include('../partials/header', { title: 'Students | Add' }) %>
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Create New Student</title>
-        <link rel="stylesheet" href="/public/style.css">
-    </head>
-    
-    <body>
-        <div class="body-container">
+    <div class="body-container">
+        <div class="top-nav-links">
+            <a href="/">Home Page</a>
+            <a href="/students">Students List</a>
+        </div>
 
-            <div class="top-nav-links">
-                <a href="/">Home Page</a>
-                <a href="/students">Students List</a>
-            </div>
+        <div class="create-student-form">            
+            <h1>Student Form</h1>
 
-            <div class="create-student-form">            
-                <h1>Student Form</h1>
+            <form action="/student-created" method="POST" id="create-student-form">
+                <div class="form-control">
+                    <label for="student-name">Name:</label>
+                    <input type="text" name="name" id="student-name" required value="John" />
+                </div>
 
-                <form action="/student-created" method="POST" id="create-student-form">
+                <div class="form-control">
+                    <label for="student-surname">Surname:</label>
+                    <input type="text" name="surname" id="student-surname" required value="Doe" />
+                </div>
+
+                <div class="form-control">
+                    <label for="student-age">Age:</label>
+                    <input type="number" name="age" id="student-age" required value="36" />
+                </div>
+
+                <div class="form-control">
+                    <label for="student-phone">Phone:</label>
+                    <input type="tel" name="phone" id="student-phone" required value="+37077717033" />
+                </div>
+
+                <div class="form-control">
+                    <label for="student-email">Email:</label>
+                    <input type="email" name="email" id="student-email" required value="student@example.com" />
+                </div>
+
+                <div class="form-control">
+                    <label for="student-it-knowledge">IT Knowledge:</label>
+                    <input type="range" name="itKnowledge" id="student-it-knowledge" required value="5" min="0" max="10" step="0.5"/>
+                    <output id="it-knowledge-output">5</output>
+                </div>
+
+                <fieldset>
+                    <legend>Group:</legend>
+
                     <div class="form-control">
-                        <label for="student-name">Name:</label>
-                        <input type="text" name="name" id="student-name" required value="John" />
+                        <input type="radio" name="group" id="group-1" value="TYPE 20" checked />
+                        <label for="group-1">TYPE 20gr.</label>
                     </div>
 
                     <div class="form-control">
-                        <label for="student-surname">Surname:</label>
-                        <input type="text" name="surname" id="student-surname" required value="Doe" />
+                        <input type="radio" name="group" id="group-2" value="TYPE 21" checked />
+                        <label for="group-2">TYPE 21gr.</label>
                     </div>
 
                     <div class="form-control">
-                        <label for="student-age">Age:</label>
-                        <input type="number" name="age" id="student-age" required value="36" />
+                        <input type="radio" name="group" id="group-3" value="TYPE 22" checked />
+                        <label for="group-3">TYPE 22gr.</label>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Programming Languages:</legend>
+
+                    <div class="form-control">
+                        <input type="checkbox" name="interests" id="language-1" value="JavaScript" checked />
+                        <label for="language-1">JavaScript</label>
                     </div>
 
                     <div class="form-control">
-                        <label for="student-phone">Phone:</label>
-                        <input type="tel" name="phone" id="student-phone" required value="+37077717033" />
+                        <input type="checkbox" name="interests" id="language-2" value="Rust" />
+                        <label for="language-2">Rust</label>
                     </div>
 
                     <div class="form-control">
-                        <label for="student-email">Email:</label>
-                        <input type="email" name="email" id="student-email" required value="student@example.com" />
-                    </div>
+                        <input type="checkbox" name="interests" id="language-3" value="Python" />
+                        <label for="language-3">Python</label>
+                    </div>                    
+                </fieldset>
 
-                    <div class="form-control">
-                        <label for="student-it-knowledge">IT Knowledge:</label>
-                        <input type="range" name="itKnowledge" id="student-it-knowledge" required value="5" min="0" max="10" step="0.5"/>
-                        <output id="it-knowledge-output">5</output>
-                    </div>
+                <button type="submit">Create a Student Record</button>
+            </form>
+        </div> 
+    </div>
 
-                    <fieldset>
-                        <legend>Group:</legend>
-
-                        <div class="form-control">
-                            <input type="radio" name="group" id="group-1" value="TYPE 20" checked />
-                            <label for="group-1">TYPE 20gr.</label>
-                        </div>
-
-                        <div class="form-control">
-                            <input type="radio" name="group" id="group-2" value="TYPE 21" checked />
-                            <label for="group-2">TYPE 21gr.</label>
-                        </div>
-
-                        <div class="form-control">
-                            <input type="radio" name="group" id="group-3" value="TYPE 22" checked />
-                            <label for="group-3">TYPE 22gr.</label>
-                        </div>
-                    </fieldset>
-
-                    <fieldset>
-                        <legend>Programming Languages:</legend>
-
-                        <div class="form-control">
-                            <input type="checkbox" name="interests" id="language-1" value="JavaScript" checked />
-                            <label for="language-1">JavaScript</label>
-                        </div>
-
-                        <div class="form-control">
-                            <input type="checkbox" name="interests" id="language-2" value="Rust" />
-                            <label for="language-2">Rust</label>
-                        </div>
-
-                        <div class="form-control">
-                            <input type="checkbox" name="interests" id="language-3" value="Python" />
-                            <label for="language-3">Python</label>
-                        </div>                    
-                    </fieldset>
-
-                    <button type="submit">Create a Student Record</button>
-                </form>                
-
-                <script>
-                    const itKnowledgeInput = document.getElementById('student-it-knowledge')
-                    const itKnowledgeOutput = document.getElementById('it-knowledge-output')
-
-                    itKnowledgeInput.addEventListener('input', function () {
-                        itKnowledgeOutput.textContent = this.value
-                    })
-                    
-                    itKnowledgeOutput.textContent = itKnowledgeInput.value
-                </script>    
-            </div>
-        </div>        
-    </body>
-</html>
+<%- include('../partials/student-form-footer') %>

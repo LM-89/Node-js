@@ -52,5 +52,20 @@
       "Python"
     ],
     "id": "029b12fe-5afe-455c-be3d-9059d19aac88"
+  },
+  {
+    "name": "John",
+    "surname": "Doe",
+    "age": "30",
+    "phone": "+37077717033",
+    "email": "student@example.com",
+    "itKnowledge": "5",
+    "group": "TYPE 21",
+    "interests": [
+      "JavaScript",
+      "Rust",
+      "Python"
+    ],
+    "id": "21049c0c-3af1-48b1-960a-cc7d31f39c1e"
   }
 ]

@@ -1,35 +1,26 @@
-<!DOCTYPE html>
+<%- include('../partials/header', { title: 'Lecturers' }) %>
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lecturers</title>
-        <link rel="stylesheet" href="/public/style.css">        
-    </head>
+    <div class="body-container">
+        <div>
+            <a href="/">Home Page</a>
+            <a href="/create-lecturer">Create a Lecturer</a>
 
-    <body>
-        <div class="body-container">
-            <div>
-                <a href="/">Home Page</a>
-                <a href="/create-lecturer">Create a Lecturer</a>
-    
-                <h1>Lecturers List</h1>
-                
-                <ul>
-                    <% lecturers.map(lecturer => { %>
-                        <li>
-                            <a href="/lecturers/<%= lecturer.id %>"><%= lecturer.name %> <%= lecturer.surname %></a>
-                            <p>Phone: <%= lecturer.phone %></p>
-                            <p>Email: <%= lecturer.email %></p>
-                            <p>Age: <%= lecturer.age %></p>
-                            <p>Subjects: <%= lecturer.subjects.join(', ') %></p>
-                            <p>Years of Experience: <%= lecturer.yearsOfExperience %></p>
-                            <p>Favorite Language: <%= lecturer.favoriteLanguage %></p>
-                        </li>
-                    <% }) %>
-                </ul>                
-            </div>
+            <h1>Lecturers List</h1>
+            
+            <ul>
+                <% lecturers.map(lecturer => { %>
+                    <li>
+                        <a href="/lecturers/<%= lecturer.id %>"><%= lecturer.name %> <%= lecturer.surname %></a>
+                        <p>Phone: <%= lecturer.phone %></p>
+                        <p>Email: <%= lecturer.email %></p>
+                        <p>Age: <%= lecturer.age %></p>
+                        <p>Subjects: <%= lecturer.subjects.join(', ') %></p>
+                        <p>Years of Experience: <%= lecturer.yearsOfExperience %></p>
+                        <p>Favorite Language: <%= lecturer.favoriteLanguage %></p>
+                    </li>
+                <% }) %>
+            </ul>                
         </div>
-    </body>
-</html>
+    </div>
+
+<%- include('../partials/global-footer') %>

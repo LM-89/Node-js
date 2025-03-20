@@ -9,6 +9,9 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))  //Cssui
 
+app.locals.siteTitle = 'School '
+app.locals.currentDate = new Date().getFullYear()
+
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'))
 //------------------------------------------------
@@ -43,7 +46,6 @@ app.get('*', (req, res, next) => {
 
 const PORT = 3000
 app.listen(PORT, () => console.log('Server is running on port: '.italic.brightMagenta + `${PORT}`.italic.yellow))
-
 
 
 //-------GAL PRIREIKS FUNKCIJU-------

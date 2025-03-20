@@ -1,35 +1,26 @@
-<!DOCTYPE html>
+<%- include('../partials/header', { title: 'Languages | Add' }) %>
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Add new Language</title>
-        <link rel="stylesheet" href="/public/style.css">
-    </head>
+    <div class="body-container">
+        <div>
+            <a href="/">Home Page</a>
+            <a href="/languages">Languages List</a>
 
-    <body>
-        <div class="body-container">
-            <div>
-                <a href="/">Home Page</a>
-                <a href="/languages">Languages List</a>
+            <h1>Add a Programming Language</h1>
 
-                <h1>Add a Programming Language</h1>
+            <form action="/language-created" method="POST">
+                <div class="form-control">
+                    <label for="language-name">Language Name:</label>
+                    <input type="text" name="name" id="language-name" required />
+                </div>
 
-                <form action="/language-created" method="POST">
-                    <div class="form-control">
-                        <label for="language-name">Language Name:</label>
-                        <input type="text" name="name" id="language-name" required />
-                    </div>
+                <div class="form-control">
+                    <label for="language-description">Description:</label>
+                    <textarea name="description" id="language-description" required></textarea>
+                </div>
 
-                    <div class="form-control">
-                        <label for="language-description">Description:</label>
-                        <textarea name="description" id="language-description" required></textarea>
-                    </div>
+                <button type="submit">Add New Language</button>
+            </form>
+        </div>
+    </div>
 
-                    <button type="submit">Add New Language</button>
-                </form>
-            </div>
-        </div>    
-    </body>
-</html>
+<%- include('../partials/global-footer') %>

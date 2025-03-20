@@ -1,36 +1,27 @@
-<!DOCTYPE html>
+<%- include('../partials/header', { title: 'Groups' }) %>
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Groups List</title>
-        <link rel="stylesheet" href="/public/style.css">
-    </head>
+    <div class="body-container">
+        <div>
+            <a href="/">Home Page</a>
+            <a href="/create-group">Create a Group</a>
 
-    <body>
-        <div class="body-container">
-            <div>
-                <a href="/">Home Page</a>
-                <a href="/create-group">Create a Group</a>
-    
-                <% if (groups.length > 0) { %>
-                <h1>Groups List (<%= groups.length %>)</h1>
-                <% } else { %>
-                    <h1>No Groups yet..</h1>        
-                <% } %>
-    
-                <% if (groups.length > 0) { %>
-                    <ul class="groups-list">
-                        <% groups.forEach(group => { %>
-                            <li>
-                                <a href="/groups/<%= group.id %>" class="group-info"><%= group.name %> (<%= group.id %>)</a>
-                                <p class="group-info">Description: <%= group.description %></p>
-                            </li>
-                        <% }) %>
-                    </ul>
-                <% } %>
-            </div>
-        </div>        
-    </body>
-</html>
+            <% if (groups.length > 0) { %>
+            <h1>Groups List (<%= groups.length %>)</h1>
+            <% } else { %>
+                <h1>No Groups yet..</h1>        
+            <% } %>
+
+            <% if (groups.length > 0) { %>
+                <ul class="groups-list">
+                    <% groups.forEach(group => { %>
+                        <li>
+                            <a href="/groups/<%= group.id %>" class="group-info"><%= group.name %> (<%= group.id %>)</a>
+                            <p class="group-info">Description: <%= group.description %></p>
+                        </li>
+                    <% }) %>
+                </ul>
+            <% } %>
+        </div>
+    </div>  
+
+<%- include('../partials/global-footer') %>

@@ -1,72 +1,63 @@
-<!DOCTYPE html>
+<%- include('../partials/header', { title: lecturer.name + ' ' + lecturer.surname + ' | Edit' }) %>
 
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit Lecturer</title>
-        <link rel="stylesheet" href="/public/style.css">        
-    </head>
+    <div class="body-container">
+        <div>
+            <a href="/">Home Page</a>
+            <a href="/lecturers">Lecturers List</a>
 
-    <body>
-        <div class="body-container">
-            <div>
-                <a href="/">Home Page</a>
-                <a href="/lecturers">Lecturers List</a>
+            <h1>Edit Lecturer</h1>
 
-                <h1>Edit Lecturer</h1>
+            <form action="/lecturer-edited" method="POST">
+                <div class="form-control">
+                    <label for="lecturer-name">First Name:</label>
+                    <input type="text" name="name" id="lecturer-name" required value="<%= lecturer.name %>" />
+                </div>
 
-                <form action="/lecturer-edited" method="POST">
-                    <div class="form-control">
-                        <label for="lecturer-name">First Name:</label>
-                        <input type="text" name="name" id="lecturer-name" required value="<%= lecturer.name %>" />
-                    </div>
+                <div class="form-control">
+                    <label for="lecturer-surname">Surname:</label>
+                    <input type="text" name="surname" id="lecturer-surname" required value="<%= lecturer.surname %>" />
+                </div>
 
-                    <div class="form-control">
-                        <label for="lecturer-surname">Surname:</label>
-                        <input type="text" name="surname" id="lecturer-surname" required value="<%= lecturer.surname %>" />
-                    </div>
+                <div class="form-control">
+                    <label for="lecturer-phone">Phone:</label>
+                    <input type="tel" name="phone" id="lecturer-phone" required value="<%= lecturer.phone %>" />
+                </div>
 
-                    <div class="form-control">
-                        <label for="lecturer-phone">Phone:</label>
-                        <input type="tel" name="phone" id="lecturer-phone" required value="<%= lecturer.phone %>" />
-                    </div>
+                <div class="form-control">
+                    <label for="lecturer-email">Email:</label>
+                    <input type="email" name="email" id="lecturer-email" required value="<%= lecturer.email %>" />
+                </div>
 
-                    <div class="form-control">
-                        <label for="lecturer-email">Email:</label>
-                        <input type="email" name="email" id="lecturer-email" required value="<%= lecturer.email %>" />
-                    </div>
+                <div class="form-control">
+                    <label for="lecturer-age">Age:</label>
+                    <input type="number" name="age" id="lecturer-age" required value="<%= lecturer.age %>" />
+                </div>
 
-                    <div class="form-control">
-                        <label for="lecturer-age">Age:</label>
-                        <input type="number" name="age" id="lecturer-age" required value="<%= lecturer.age %>" />
-                    </div>
+                <div class="form-control">
+                    <label for="lecturer-subjects">Subjects (comma separated):</label>
+                    <input type="text" name="subjects" id="lecturer-subjects" required value="<%= lecturer.subjects.join(', ') %>" />
+                </div>
 
-                    <div class="form-control">
-                        <label for="lecturer-subjects">Subjects (comma separated):</label>
-                        <input type="text" name="subjects" id="lecturer-subjects" required value="<%= lecturer.subjects.join(', ') %>" />
-                    </div>
+                <div class="form-control">
+                    <label for="lecturer-experience">Years of Experience:</label>
+                    <input type="number" name="yearsOfExperience" id="lecturer-experience" required value="<%= lecturer.yearsOfExperience %>" />
+                </div>
 
-                    <div class="form-control">
-                        <label for="lecturer-experience">Years of Experience:</label>
-                        <input type="number" name="yearsOfExperience" id="lecturer-experience" required value="<%= lecturer.yearsOfExperience %>" />
-                    </div>
+                <div class="form-control">
+                    <label for="lecturer-favorite-language">Favorite Programming Language:</label>
+                    <select name="favoriteLanguage" id="lecturer-favorite-language" required>
+                        <% languages.forEach(language => { %>
+                            <option value="<%= language.name %>" <%= lecturer && lecturer.favoriteLanguage === language.name ? "selected" : "" %>>
+                                <%= language.name %>
+                            </option>
+                        <% }) %>
+                    </select>
+                </div>
 
-                    <div class="form-control">
-                        <label for="lecturer-favorite-language">Favorite Programming Language:</label>
-                        <select name="favoriteLanguage" id="lecturer-favorite-language" required>
-                            <% languages.forEach(language => { %>
-                                <option value="<%= language.name %>" <%= lecturer && lecturer.favoriteLanguage === language.name ? "selected" : "" %>>
-                                    <%= language.name %>
-                                </option>
-                            <% }) %>
-                        </select>
-                    </div>
-
-                    <input type="hidden" name="id" value="<%= lecturer.id %>" />
-                    <button type="submit">Update Lecturer</button>
-                </form>
-            </div>
+                <input type="hidden" name="id" value="<%= lecturer.id %>" />
+                <button type="submit">Update Lecturer</button>
+            </form>
         </div>
-    </body>
-</html>
+    </div>
+
+<%- include('../partials/global-footer') %>
